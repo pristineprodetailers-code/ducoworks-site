@@ -12,11 +12,15 @@
 
 /* Benchmarked against Tropix Mobile Detailing Cairns (Aug 2026), the largest
    operator in the region, so these sit at the Cairns market rate rather than
-   under it. Their comparable "from" prices, GST inclusive:
+   under it. Their comparable "from" prices:
      Full Maintenance Detail  $192.50     Cut & Polish        $770
      Full In-depth Detail     $385        5yr paint ceramic   $1,299
      Pre-sale Detail          $550        Factory Reset       $2,500
-   All prices here are GST inclusive. */
+
+   DucoWorks is not GST registered, so no GST is charged or shown. These are
+   simply the prices. (Tropix's odd figures are round numbers plus GST — they
+   are registered.) If DucoWorks ever registers, the site needs a line saying
+   prices include GST. */
 
 var PRICING = {
 
