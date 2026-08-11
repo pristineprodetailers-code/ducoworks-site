@@ -10,23 +10,31 @@
 
 'use strict';
 
+/* Benchmarked against Tropix Mobile Detailing Cairns (Aug 2026), the largest
+   operator in the region, so these sit at the Cairns market rate rather than
+   under it. Their comparable "from" prices, GST inclusive:
+     Full Maintenance Detail  $192.50     Cut & Polish        $770
+     Full In-depth Detail     $385        5yr paint ceramic   $1,299
+     Pre-sale Detail          $550        Factory Reset       $2,500
+   All prices here are GST inclusive. */
+
 var PRICING = {
 
   packages: {
     maintenance: {
       label: 'Maintenance Detail',
       duration: '2–3 hours on site',
-      base: { small: 120, medium: 150, large: 180 }
+      base: { small: 190, medium: 240, large: 290 }
     },
     full: {
       label: 'Full Detail',
       duration: '5–6 hours on site',
-      base: { small: 280, medium: 340, large: 400 }
+      base: { small: 385, medium: 460, large: 540 }
     },
     correction: {
       label: 'Correction & Ceramic',
       duration: '1–2 days on site',
-      base: { small: 950, medium: 1200, large: 1450 }
+      base: { small: 1290, medium: 1590, large: 1890 }
     }
   },
 
@@ -50,13 +58,14 @@ var PRICING = {
     cairns:    { label: 'Cairns & northern beaches', fee: 55 }
   },
 
+  // Matched to Tropix's extras, which are $55 / $165 across the board.
   addons: {
-    headlights: { label: 'Headlight restoration',    price: 80 },
-    pethair:    { label: 'Pet hair removal',         price: 60 },
-    engine:     { label: 'Engine bay detail',        price: 60 },
-    seats:      { label: 'Seat & carpet extraction', price: 120 },
+    headlights: { label: 'Headlight restoration',    price: 165 },
+    pethair:    { label: 'Pet hair removal',         price: 55 },
+    engine:     { label: 'Engine bay detail',        price: 55 },
+    seats:      { label: 'Seat & carpet extraction', price: 165 },
     // Only sold alongside the Correction & Ceramic package.
-    ceramic5:   { label: 'Five-year ceramic', price: 400, requires: 'correction' }
+    ceramic5:   { label: 'Five-year ceramic', price: 300, requires: 'correction' }
   }
 };
 
