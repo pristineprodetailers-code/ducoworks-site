@@ -206,7 +206,7 @@ if (form) {
     var data = Object.fromEntries(new FormData(form).entries());
 
     if (data.access_key === 'YOUR_WEB3FORMS_KEY') {
-      setStatus('The form is not connected yet. Call 0468 013 628.', 'err');
+      setStatus('The form is not connected yet. Call 0401 881 802.', 'err');
       return;
     }
 
@@ -225,12 +225,12 @@ if (form) {
           update();
           setStatus('Received. You will hear back today — check your junk folder if not.', 'ok');
         } else {
-          setStatus('That did not send. Call 0468 013 628 and it gets sorted.', 'err');
+          setStatus('That did not send. Call 0401 881 802 and it gets sorted.', 'err');
           submitBtn.disabled = false;
         }
       })
       .catch(function () {
-        setStatus('No connection. Call 0468 013 628 and it gets sorted.', 'err');
+        setStatus('No connection. Call 0401 881 802 and it gets sorted.', 'err');
         submitBtn.disabled = false;
       });
   });
