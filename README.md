@@ -72,25 +72,35 @@ changes. It is not part of publishing.
 
 ## Where it is hosted
 
-Live free on GitHub Pages at
-<https://pristineprodetailers-code.github.io/ducoworks-site/>
+Live at **<https://ducoworks.com>** — GitHub Pages, free, with a free HTTPS
+certificate GitHub renews on its own.
 
-Asset paths are **relative** (`styles.css`, not `/styles.css`) so the site works
-unchanged whether it is served from a subfolder like the URL above or from the
-root of a real domain.
+The domain is registered at Namecheap. Its DNS points at GitHub:
 
-### When ducoworks.com.au is registered
+| Type | Host | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `pristineprodetailers-code.github.io.` |
 
-Two steps:
+The `CNAME` file in this repo is what tells GitHub which domain to answer for.
+**Do not delete it** — the site would fall back to the github.io address.
 
-1. Swap the absolute URLs in the meta tags, schema and sitemap:
+Asset paths are **relative** (`styles.css`, not `/styles.css`), so the site works
+from a domain root or a subfolder without changes.
+
+### If you ever add ducoworks.com.au
+
+`.com.au` is a stronger local signal for Cairns-to-Tully searches. To move to it:
+
+1. Register it (needs an ABN), and point its DNS at the same records above.
+2. Swap the absolute URLs in the meta tags, schema and sitemap:
 
    ```bash
-   sed -i 's|https://pristineprodetailers-code.github.io/ducoworks-site/|https://ducoworks.com.au/|g' index.html sitemap.xml robots.txt
+   sed -i 's|https://ducoworks.com|https://ducoworks.com.au|g' index.html sitemap.xml robots.txt
    ```
 
-2. Add the domain in the repo's **Settings → Pages → Custom domain**, and point
-   DNS at GitHub. That writes a `CNAME` file into the repo.
-
-The domain is not registered yet. `.com.au` costs roughly $20–40/year and
-requires an ABN, so it is the one part of this project that is not free.
+3. Put the new domain in `CNAME`, and set up a redirect from `ducoworks.com` so
+   the old address keeps working.
