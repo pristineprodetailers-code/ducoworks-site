@@ -6,3 +6,10 @@ Thumbs.db
 # Scratch files written by tools/build-assets.js while rendering
 tools/_render.html
 tools/_*.png
+tools/_photo.html
+
+# Full-resolution job photos are deliberately NOT published.
+# Anything committed here is served publicly, and the originals show customers'
+# number plates and their homes. Only the cropped files in /photos/ go live.
+# Keep the masters locally so tools/build-photos.js can be re-run.
+tools/source/photos/

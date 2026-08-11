@@ -318,6 +318,6 @@ if (!stillness.matches) {
   }
 
   revealOnScroll([].slice.call(document.querySelectorAll(
-    '.card, .area-col, .std, #quote .calc fieldset, #quote .estimate, .book-form'
+    '.card, .shot, .area-col, .std, #quote .calc fieldset, #quote .estimate, .book-form'
   )));
 }
