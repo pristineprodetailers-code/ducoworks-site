@@ -174,12 +174,16 @@ if (calc) {
 /* ---- booking form ------------------------------------------------------- */
 
 var form = document.getElementById('book-form');
-var status = document.getElementById('form-status');
 var submitBtn = document.getElementById('submit-btn');
 
+/* Not `status` — a top-level `var status` binds to window.status, which coerces
+   whatever it is given to a string. The element would silently become
+   "[object HTMLParagraphElement]" and every write below would throw. */
+var statusEl = document.getElementById('form-status');
+
 function setStatus(message, kind) {
-  status.textContent = message;
-  status.className = 'form-status' + (kind ? ' ' + kind : '');
+  statusEl.textContent = message;
+  statusEl.className = 'form-status' + (kind ? ' ' + kind : '');
 }
 
 if (form) {
