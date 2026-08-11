@@ -254,6 +254,70 @@ section.alt { background: var(--panel-2); }
   .statement.is-typing::after { animation: none; opacity: 0; }
 }
 
+/* ---- inner page hero --------------------------------------------------- */
+
+/* A photograph carrying the headline, dropped almost to black so ivory type
+   stays legible over it. The image is atmosphere, not the message. */
+.page-hero {
+  position: relative; border-top: 0; overflow: hidden;
+  padding: clamp(84px, 15vh, 132px) 0 clamp(64px, 11vh, 104px);
+  background-color: var(--ink);
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(8,8,10,.96) 0%, rgba(8,8,10,.88) 42%, rgba(8,8,10,.58) 100%),
+    linear-gradient(to top, var(--ink) 2%, rgba(8,8,10,.4) 46%, rgba(8,8,10,.55) 100%);
+}
+
+.page-hero .wrap { position: relative; }
+
+.page-hero h1 {
+  font-size: clamp(32px, 6.2vw, 60px);
+  letter-spacing: .16em;
+}
+
+.page-hero .lead { margin-top: 4px; max-width: 46ch; }
+.page-hero .cta-row { margin-bottom: 0; }
+
+.crumbs {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 22px;
+}
+.crumbs a { color: var(--champagne); }
+.crumbs a:hover { color: var(--ivory); }
+.crumbs span { margin: 0 8px; color: var(--bronze); }
+
+/* Body copy holds a readable measure but keeps its left edge on the same
+   line as the hero above it. Centring it instead makes every section look
+   slightly out of register with the headline. */
+.prose { max-width: 66ch; }
+
+/* ---- body copy lists --------------------------------------------------- */
+
+ul.points { list-style: none; max-width: 62ch; }
+ul.points li {
+  position: relative; padding: 13px 0 13px 22px;
+  border-bottom: 1px solid var(--line-soft); font-size: 15.5px;
+}
+ul.points li::before {
+  content: ""; position: absolute; left: 0; top: 23px;
+  width: 9px; height: 1px; background: var(--bronze);
+}
+ul.points b { color: var(--ivory); font-weight: 600; }
+
+section p + p { margin-top: 14px; }
+section p + ul.points, section ul.points + p { margin-top: 20px; }
+
+/* ---- closing call to action -------------------------------------------- */
+
+.closer { border-top: 1px solid var(--line); }
+.closer .statement { margin: 16px 0 18px; }
+.closer .cta-row { margin-bottom: 0; }
+
 /* ---- packages ---------------------------------------------------------- */
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -302,6 +366,14 @@ section.alt { background: var(--panel-2); }
 }
 
 .fit { margin-top: auto; padding-top: 22px; font-size: 14px; color: var(--muted); }
+
+.more {
+  margin-top: 14px; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .2em; text-transform: uppercase;
+}
+
+.area-col h3 a { color: var(--champagne); }
+.area-col h3 a:hover { color: var(--ivory); }
 
 @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 
