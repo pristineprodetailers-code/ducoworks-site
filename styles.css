@@ -179,9 +179,70 @@ section.alt { background: var(--panel-2); }
   background:
     radial-gradient(120% 78% at 76% -8%, rgba(201,169,97,.12), transparent 58%),
     linear-gradient(196deg, rgba(242,239,232,.05) 0%, transparent 42%);
+  animation: glow 26s ease-in-out infinite;
 }
+
+/* A single highlight travelling across the panel, the way the light moves when
+   you walk a polisher down a door. Slow and mostly absent — if it reads as an
+   effect it is too strong. */
+.hero::after {
+  content: ""; position: absolute; inset: -25% -45%; pointer-events: none;
+  background: linear-gradient(100deg,
+    transparent 42%, rgba(242,239,232,.06) 50%, transparent 58%);
+  animation: rake 19s cubic-bezier(.4, 0, .5, 1) infinite;
+}
+
+@keyframes rake {
+  0%   { transform: translateX(-62%); opacity: 0; }
+  10%  { opacity: 1; }
+  46%  { opacity: 1; }
+  58%  { transform: translateX(62%); opacity: 0; }
+  100% { transform: translateX(62%); opacity: 0; }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: .82; }
+  50%      { opacity: 1; }
+}
+
 .hero .wrap { position: relative; }
 .hero .statement { margin-bottom: 22px; }
+
+/* ---- typewriter -------------------------------------------------------- */
+
+/* The full line is always in the HTML — JS only clears and retypes it when
+   motion is allowed, so crawlers and no-JS visitors get the finished sentence.
+   min-height is pinned before typing starts so nothing below it jumps. */
+.statement.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px; height: .95em;
+  margin-left: .12em;
+  vertical-align: -.12em;
+  background: var(--champagne);
+  animation: caret 1.05s steps(1) infinite;
+}
+.statement.is-done::after { animation: none; opacity: 0; transition: opacity .5s ease .4s; }
+
+@keyframes caret { 0%, 45% { opacity: 1; } 46%, 100% { opacity: 0; } }
+
+/* ---- scroll reveal ----------------------------------------------------- */
+
+/* The class is added by JS, never in the markup — without JS nothing hides. */
+.reveal { opacity: 0; transform: translateY(14px); }
+.reveal.is-in {
+  opacity: 1; transform: none;
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .3, 1);
+}
+
+/* ---- motion preferences ------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero::after { animation: none; }
+  .hero::after { opacity: 0; }
+  .reveal, .reveal.is-in { opacity: 1; transform: none; transition: none; }
+  .statement.is-typing::after { animation: none; opacity: 0; }
+}
 
 /* ---- packages ---------------------------------------------------------- */
 

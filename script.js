@@ -246,3 +246,65 @@ if (form) {
 
 var year = document.getElementById('year');
 if (year) { year.textContent = new Date().getFullYear(); }
+
+/* ---- motion ------------------------------------------------------------- */
+
+/* Everything below is decoration. It only ever adds to a page that already
+   works, and it all stands down when the visitor asks for less motion. */
+
+var stillness = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+/* Types the hero statement out one character at a time. The sentence is
+   already in the HTML — it is read, cleared and retyped, so the page is
+   complete for search engines and for anyone without JavaScript. */
+function typeStatement(el) {
+  var text = el.textContent.trim();
+
+  // Pin the height first, or the line below jumps as the text grows.
+  el.style.minHeight = el.offsetHeight + 'px';
+  el.textContent = '';
+  el.classList.add('is-typing');
+
+  var i = 0;
+  (function tick() {
+    if (i >= text.length) {
+      el.classList.add('is-done');
+      return;
+    }
+    el.textContent += text.charAt(i);
+    i += 1;
+    // A touch slower after a full stop — it reads as a breath, not a stutter.
+    setTimeout(tick, text.charAt(i - 1) === '.' ? 340 : 52);
+  }());
+}
+
+/* Fades sections in as they arrive. Anything already on screen is shown at
+   once so the first paint is never blank. */
+function revealOnScroll(nodes) {
+  if (!('IntersectionObserver' in window)) { return; }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) { return; }
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+
+  nodes.forEach(function (node) {
+    node.classList.add('reveal');
+    io.observe(node);
+  });
+}
+
+if (!stillness.matches) {
+  var statement = document.querySelector('.hero .statement');
+  if (statement) {
+    // Let the hero settle before the line starts writing itself.
+    setTimeout(function () { typeStatement(statement); }, 520);
+  }
+
+  revealOnScroll([].slice.call(document.querySelectorAll(
+    '.card, .area-col, .std, #quote .calc fieldset, #quote .estimate, .book-form'
+  )));
+}
