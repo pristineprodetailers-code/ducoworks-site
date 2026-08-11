@@ -208,6 +208,16 @@ section.alt { background: var(--panel-2); }
 .hero .wrap { position: relative; }
 .hero .statement { margin-bottom: 22px; }
 
+/* The one credibility line. A count of work done, stated flat — no badge,
+   no stars, no exclamation mark. */
+.proof {
+  font-family: var(--mono);
+  font-size: 11.5px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--muted);
+  padding-left: 15px; border-left: 1px solid var(--bronze);
+}
+.proof b { color: var(--champagne); font-weight: 700; }
+
 /* ---- typewriter -------------------------------------------------------- */
 
 /* The full line is always in the HTML — JS only clears and retypes it when
