@@ -70,6 +70,27 @@ node tools/build-assets.js
 That needs Google Chrome installed, and only needs running if the logo artwork
 changes. It is not part of publishing.
 
-## Domain
+## Where it is hosted
 
-Live at <https://ducoworks.com.au>, hosted free on Cloudflare Pages.
+Live free on GitHub Pages at
+<https://pristineprodetailers-code.github.io/ducoworks-site/>
+
+Asset paths are **relative** (`styles.css`, not `/styles.css`) so the site works
+unchanged whether it is served from a subfolder like the URL above or from the
+root of a real domain.
+
+### When ducoworks.com.au is registered
+
+Two steps:
+
+1. Swap the absolute URLs in the meta tags, schema and sitemap:
+
+   ```bash
+   sed -i 's|https://pristineprodetailers-code.github.io/ducoworks-site/|https://ducoworks.com.au/|g' index.html sitemap.xml robots.txt
+   ```
+
+2. Add the domain in the repo's **Settings → Pages → Custom domain**, and point
+   DNS at GitHub. That writes a `CNAME` file into the repo.
+
+The domain is not registered yet. `.com.au` costs roughly $20–40/year and
+requires an ABN, so it is the one part of this project that is not free.

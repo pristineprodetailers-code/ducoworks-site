@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ducoworks.com.au/sitemap.xml
+Sitemap: https://pristineprodetailers-code.github.io/ducoworks-site/sitemap.xml
