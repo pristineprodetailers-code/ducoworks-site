@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>DucoWorks OG source</title>
+<!--
+  Source for /og.png (1200x630 social share card).
+  Uses the generated ../logo.png, so it must render after that file exists.
+  Regenerate with:  node tools/build-assets.js
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; }
+
+  .card {
+    width: 1200px; height: 630px; position: relative;
+    background: #08080a; color: #f2efe8;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+
+  /* the rake of light, same gesture as the site hero */
+  .card::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(115% 80% at 78% -12%, rgba(201,169,97,.15), transparent 58%),
+      linear-gradient(198deg, rgba(242,239,232,.05) 0%, transparent 44%);
+  }
+
+  .logo { position: relative; width: 620px; display: block; }
+
+  .line {
+    position: absolute; left: 0; right: 0;
+    font-family: Consolas, ui-monospace, monospace;
+    font-size: 17px; letter-spacing: .3em; text-transform: uppercase;
+    text-align: center;
+  }
+  .top { top: 74px; color: #c9a961; }
+  .bottom { bottom: 74px; color: #7c7c88; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p class="line top">Mobile &middot; Cairns to Tully</p>
+  <img class="logo" src="../logo.png" alt="DucoWorks">
+  <p class="line bottom">Paint correction &middot; Ceramic coating &middot; Detailing</p>
+</div>
+
+</body>
+</html>

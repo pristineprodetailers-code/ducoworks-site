@@ -1,0 +1,8 @@
+# Nothing here is required to build the site — it has no build step.
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Scratch files written by tools/build-assets.js while rendering
+tools/_render.html
+tools/_*.png
