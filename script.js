@@ -37,8 +37,11 @@ var PRICING = {
     },
     correction: {
       label: 'Correction & Ceramic',
-      duration: '1–2 days on site',
-      base: { small: 1290, medium: 1590, large: 1890 }
+      duration: '1–2 days at the workshop',
+      base: { small: 1290, medium: 1590, large: 1890 },
+      // Correction and coating are not mobile — the car comes to Innisfail —
+      // so no travel is charged and the zone choice does not apply.
+      workshop: true
     }
   },
 
@@ -154,19 +157,32 @@ function update() {
     elLines.appendChild(line(add.label, '+' + money(add.price)));
   }
 
-  total += zone.fee;
-  elLines.appendChild(line('Travel — ' + zone.label,
-    zone.fee > 0 ? '+' + money(zone.fee) : 'Included'));
+  /* Workshop jobs are dropped off, so no travel is charged whatever suburb
+     is selected. Charging it would be quoting for a trip that never happens. */
+  if (pkg.workshop) {
+    elLines.appendChild(line('At the workshop — 61 Ryan St, Innisfail', 'Drop off'));
+  } else {
+    total += zone.fee;
+    elLines.appendChild(line('Travel — ' + zone.label,
+      zone.fee > 0 ? '+' + money(zone.fee) : 'Included'));
+  }
 
   elTotal.textContent = money(total);
   elDur.textContent = pkg.duration;
+
+  /* The suburb question is about travel, so it is dimmed out when the car is
+     coming to Innisfail instead. */
+  var zoneSet = calc.querySelector('#opt-zone');
+  if (zoneSet) {
+    zoneSet.closest('fieldset').classList.toggle('not-applicable', !!pkg.workshop);
+  }
 
   /* Carried into the email so the quote arrives with the enquiry. */
   var summary = [
     pkg.label,
     PRICING.sizes[sizeKey],
     cond.label + ' condition',
-    zone.label,
+    pkg.workshop ? 'Workshop — 61 Ryan St, Innisfail' : zone.label,
     addons.length
       ? 'Add-ons: ' + addons.map(function (k) { return PRICING.addons[k].label; }).join(', ')
       : 'No add-ons',

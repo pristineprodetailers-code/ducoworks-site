@@ -28,7 +28,7 @@ module.exports = function (h) {
     h1: 'Maintenance Detail',
     strap: 'For a car that is already looked after and needs to stay that way. Two to three hours, and it never gets away from you.',
     schema: service('Maintenance Car Detail',
-      'Regular maintenance detailing including hand wash, wheels, glass, interior and spray sealant, performed at the customer\'s home.'),
+      'Regular maintenance detailing including hand wash, wheels, glass, interior and three-month exterior protection, performed at the customer\'s home.'),
     faqNum: '04',
     closerEyebrow: 'From $190',
     closerLine: 'Keep it that way.',
@@ -90,15 +90,15 @@ module.exports = function (h) {
     image: 'work-feature.jpg',
     title: 'Ceramic Coating Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Ceramic Coating — Cairns to Tully | DucoWorks',
-    description: 'Ceramic coating across Cairns, Innisfail and Tully. Paint corrected first, then coated against tropical sun, salt and rain. From $1,290.',
+    description: 'Ceramic coating at our Innisfail workshop, 61 Ryan Street. Paint corrected first, then coated against tropical sun, salt and rain. From $1,290.',
     h1: 'Ceramic Coating',
-    strap: 'Protection that outlasts the excitement of collection day. Corrected first, then coated — because a coating locks in whatever is underneath it.',
+    strap: 'Protection that outlasts the excitement of collection day. Corrected first, then coated — because a coating locks in whatever is underneath it. Done in the workshop at Innisfail, not in a driveway.',
     schema: service('Ceramic Coating',
-      'Paint correction followed by a ceramic coating on paint, glass and wheels, applied at the customer\'s home across the Cassowary Coast.'),
+      'Paint correction followed by a ceramic coating on paint, glass and wheels, carried out at the DucoWorks workshop at 61 Ryan Street, Innisfail.'),
     faqNum: '04',
     closerEyebrow: 'From $1,290',
     closerLine: 'Preserve it properly.',
-    closerBody: 'Four questions in the quote tool gives you the figure for your exact car and suburb. No callback, no sales pitch, no waiting.',
+    closerBody: 'Four questions in the quote tool gives you the figure for your car. Drop off at 61 Ryan Street, Innisfail. No callback, no sales pitch, no waiting.',
     body:
       block('01', 'What a coating actually does',
         'Not wax. Not a polish. A layer that chemically bonds to the paint and stays there.',
@@ -133,9 +133,10 @@ module.exports = function (h) {
           <li><b>Three-year ceramic coating</b> on paint, glass and wheels. A five-year option is available.</li>
           <li><b>Wash instructions</b> to keep the coating rated, because the maintenance is half the result.</li>
         </ul>
-        <p class="foot-note">One to two days on site depending on the vehicle. Pricing starts at
-        $1,290 for a small car and is confirmed on inspection &mdash;
-        <a href="/#quote">get the figure for your car</a>.</p>`),
+        <p class="foot-note">One to two days at the workshop, <b>61 Ryan Street, Innisfail</b>.
+        Coating is the one service that is not mobile &mdash; it needs a controlled, dust-free
+        space to cure in. Pricing starts at $1,290 for a small car and is confirmed on
+        inspection &mdash; <a href="/#quote">get the figure for your car</a>.</p>`),
 
     faq: [
       { q: 'How long does a ceramic coating last?',
@@ -146,8 +147,10 @@ module.exports = function (h) {
         a: 'A new car is the best possible time. There is little to correct, so more of the work goes into preparation and the coating goes onto paint that has never been damaged.' },
       { q: 'Is it worth it on an older car?',
         a: 'Often, yes — but only after correction. Coating tired paint locks the tiredness in. That is why correction is included rather than sold as an upsell.' },
-      { q: 'Do you do this at my place?',
-        a: 'Yes. DucoWorks is fully mobile from Cairns to Tully. Undercover space and a power point are ideal for coating work.' }
+      { q: 'Where is the work done?',
+        a: 'At the DucoWorks workshop, 61 Ryan Street, Innisfail. Coating is the one service that is not mobile — it needs controlled conditions and a dust-free space to cure properly, which a driveway cannot give it. Detailing still comes to you.' },
+      { q: 'How long will you have my car?',
+        a: 'One to two days depending on the vehicle. You drop it off at Innisfail and it stays until the coating has cured.' }
     ]
   },
 
@@ -158,11 +161,11 @@ module.exports = function (h) {
     image: 'work-guard.jpg',
     title: 'Cut & Polish | Paint Correction Cairns | DucoWorks',
     ogTitle: 'Paint Correction — Cairns to Tully | DucoWorks',
-    description: 'Machine paint correction across Cairns, Innisfail and Tully. Swirl marks, light scratches and faded paint cut back and refinished. Mobile, at your place.',
+    description: 'Machine paint correction at our Innisfail workshop. Swirl marks, light scratches and faded paint cut back and refinished. Serving Cairns to Tully.',
     h1: 'Paint Correction',
     strap: 'Swirls, scratches and dullness are not dirt. No amount of washing removes them — they have to be cut out of the clear coat.',
     schema: service('Paint Correction',
-      'Machine polishing to remove swirl marks, light scratches and oxidation, performed at the customer\'s home across the Cassowary Coast.'),
+      'Machine polishing to remove swirl marks, light scratches and oxidation, carried out at the DucoWorks workshop at 61 Ryan Street, Innisfail.'),
     faqNum: '04',
     closerEyebrow: 'Included in Correction & Ceramic',
     closerLine: 'See what is under there.',
@@ -200,8 +203,9 @@ module.exports = function (h) {
         once, and the result is checked under a light hard enough to show what daylight hides.
         One car a day is the reason that is possible.</p>
         <p>Correction is included in the Correction &amp; Ceramic package rather than sold
-        separately, because doing one without the other rarely makes sense.
-        <a href="/ceramic-coating/">See what a coating adds</a>, or
+        separately, because doing one without the other rarely makes sense. Both are done at
+        the workshop, <b>61 Ryan Street, Innisfail</b> &mdash; machine work needs a controlled
+        space, not a driveway. <a href="/ceramic-coating/">See what a coating adds</a>, or
         <a href="/#quote">price your car</a>.</p>`),
 
     faq: [
@@ -211,6 +215,8 @@ module.exports = function (h) {
         a: 'Correction removes a very small amount of clear coat, which is why it is done in sections and checked as it goes rather than run over the whole car at speed.' },
       { q: 'How long does it take?',
         a: 'One to two days depending on the vehicle and the condition of the paint. It is not a half-day job and anyone offering it as one is not correcting anything.' },
+      { q: 'Do you come to me for this?',
+        a: 'No. Correction and coating are done at the workshop, 61 Ryan Street, Innisfail, where the conditions can be controlled. Maintenance and full detailing still come to you.' },
       { q: 'My car is white. Is it worth it?',
         a: 'White hides swirls better than black does, so the change is less dramatic — but oxidation and water spotting show up on white just as much, and both correct out.' }
     ]
@@ -223,11 +229,11 @@ module.exports = function (h) {
     image: 'work-wheel.jpg',
     title: 'Car Detailing Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Full Detail — Mobile Car Detailing, Cairns to Tully',
-    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Exterior decontamination, three-month protection and an interior deep clean. From $385.',
+    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Tar removal, three-month protection and an interior deep clean, at your place. From $385.',
     h1: 'Full Detail',
     strap: 'The reset. For a car that has not been touched properly in a year or more — inside and out, in one day.',
     schema: service('Car Detailing',
-      'Full interior and exterior car detailing including decontamination, machine-applied sealant and interior deep clean, performed at the customer\'s home.'),
+      'Full interior and exterior car detailing including tar removal, three-month exterior protection, interior deep clean and interior protectant, performed at the customer\'s home.'),
     faqNum: '04',
     closerEyebrow: 'From $385',
     closerLine: 'Get it back.',
@@ -235,13 +241,13 @@ module.exports = function (h) {
     body:
       block('01', 'What a full detail covers',
         'Everything a wash does, and then the work a wash never touches.',
-        `<p>A car wash removes what is loose. A detail removes what is bonded — the iron
-        particles from brake dust that have embedded in your clear coat, the tar down the
-        sills, the film on the inside of the windscreen you only notice driving into the sun.
-        Then it puts protection back on, inside and out, so the result lasts past the weekend.</p>
+        `<p>A car wash removes what is loose. A detail goes after what has stuck — the tar
+        down the sills and behind the wheels, the grime in the door shuts, the film on the
+        inside of the windscreen you only notice driving into the sun. Then it puts protection
+        back on, inside and out, so the result lasts past the weekend.</p>
         <ul class="points">
           <li><b>Snow foam pre-wash and two-bucket hand wash</b> — the loose grit comes off before anything touches the paint.</li>
-          <li><b>Chemical decontamination</b> — iron fallout and tar dissolved rather than scrubbed.</li>
+          <li><b>Tar removal</b> — the spots down the sills and behind the wheels dissolved off rather than scrubbed at.</li>
           <li><b>Exterior protection</b> — applied to the paint and rated at three months, so the car stays easier to wash long after the day is over.</li>
           <li><b>Interior deep clean</b> — vents, seals, console and boot, not just the bits you can see from the driver's seat.</li>
           <li><b>Interior protectant</b> — surfaces treated so the tropical sun has something to work on other than your dash.</li>

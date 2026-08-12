@@ -744,3 +744,11 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   font-size: clamp(70px, 18vw, 150px); font-weight: 200; letter-spacing: .16em;
   color: var(--ivory); line-height: 1;
 }
+
+/* ---- quote: workshop jobs ----------------------------------------------- */
+
+/* Correction and ceramic are dropped off at Innisfail, so the travel question
+   stops applying. Dimmed rather than hidden, so the layout does not jump. */
+.not-applicable { opacity: .35; pointer-events: none; }
+.not-applicable .na-note { display: inline; }
+.na-note { display: none; color: var(--bronze); margin-left: 8px; }
