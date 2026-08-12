@@ -79,7 +79,7 @@ module.exports = function (h) {
       { q: 'My car is filthy. Can I start with this?',
         a: 'If it has been neglected for a year or more, a full detail first will get far more out of it. Otherwise you are paying to tidy rather than to fix.' },
       { q: 'Do you need power and water?',
-        a: 'A standard power point is needed for machine polishing. Water is carried, so a tap is helpful but not essential.' }
+        a: 'Yes, both, and they are not optional. A standard power point and a tap at the property. The van does not carry water, so if there is no tap the job cannot be done that day.' }
     ]
   },
 
@@ -266,9 +266,10 @@ module.exports = function (h) {
 
       block('03', 'Done at your place',
         'You do not lose a day driving across town and sitting in a waiting room.',
-        `<p>Everything arrives with the van. A standard power point is needed for machine work,
-        and undercover space helps in the wet season, but the job happens in your driveway
-        while you get on with your day.</p>
+        `<p>Everything else arrives with the van. Two things have to be there already: a
+        standard power point and a tap. The van does not carry water, so a tap is a
+        requirement rather than a convenience. Undercover space helps in the wet season, but
+        otherwise the job happens in your driveway while you get on with your day.</p>
         <p>Pricing starts at $385 for a small car and is confirmed on inspection.
         <a href="/#quote">Four questions gives you the figure</a> for your exact vehicle and
         suburb, including travel.</p>`),
@@ -277,7 +278,7 @@ module.exports = function (h) {
       { q: 'How long does a full detail take?',
         a: 'Five to six hours for most cars. Larger or heavily neglected vehicles run longer, and that is priced in before the work starts rather than added afterwards.' },
       { q: 'Do you need power and water?',
-        a: 'A standard power point is needed for machine polishing. Water is carried, so a tap is helpful but not essential.' },
+        a: 'Yes, both, and they are not optional. A standard power point and a tap at the property. The van does not carry water, so if there is no tap the job cannot be done that day.' },
       { q: 'What if it rains?',
         a: 'This is Far North Queensland, so wet days are planned around. Undercover space is ideal. If neither is available the booking is moved to the next dry day at no charge.' },
       { q: 'Can you get pet hair out?',
@@ -344,7 +345,7 @@ module.exports = function (h) {
       { q: 'Which Cairns suburbs do you cover?',
         a: 'The city and northern beaches, plus Edmonton, Gordonvale, Babinda and Bramston Beach on the way through.' },
       { q: 'Can you come to my workplace?',
-        a: 'Yes, as long as there is somewhere safe to park the car for the day and access to a power point.' },
+        a: 'Yes, as long as the car can be parked safely for the day and there is a power point and a tap you can use.' },
       { q: 'How far ahead do I need to book?',
         a: 'One car a day means the calendar fills in advance, and correction and ceramic work takes a deposit to hold the day.' }
     ]

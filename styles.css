@@ -752,3 +752,14 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
 .not-applicable { opacity: .35; pointer-events: none; }
 .not-applicable .na-note { display: inline; }
 .na-note { display: none; color: var(--bronze); margin-left: 8px; }
+
+/* A booking condition the customer has to know before they send the form,
+   not after a wasted trip. */
+.notice {
+  margin: -18px 0 30px;
+  padding: 14px 18px;
+  border-left: 1px solid var(--bronze);
+  background: var(--panel);
+  font-size: 14.5px;
+}
+.notice b { color: var(--champagne); font-weight: 600; }
