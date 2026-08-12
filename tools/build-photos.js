@@ -55,10 +55,12 @@ if (!chrome) {
    that competes with the headline is a background that has failed. */
 const PHOTOS = [
   {
-    file: '03-rangerover.jpg', out: 'bg-hero.jpg', width: 1920,
-    // Right edge stops short of the pallet and shed wall at x=2190.
-    rect: { x: 0, y: 1150, w: 2100, h: 1181 }, quality: 0.7,
-    note: 'home hero — headlight, guard and bonnet reflections'
+    file: '04-sti.jpg', out: 'bg-hero.jpg', width: 1920,
+    // Bonnet, scoop and vents. Left edge starts at 400 to clear the wheelie
+    // bin; the wet driveway on that side ends up under the darkest part of
+    // the overlay anyway, which is where the wordmark sits.
+    rect: { x: 400, y: 750, w: 2400, h: 1350 }, quality: 0.7,
+    note: 'home hero — STI bonnet and scoop'
   },
   {
     file: '05-reflection.jpg', out: 'bg-band.jpg', width: 1920,

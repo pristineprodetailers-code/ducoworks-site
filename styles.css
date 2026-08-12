@@ -174,7 +174,7 @@ section.alt { background: var(--panel-2); }
   background-color: var(--ink);
   background-image: url('/photos/bg-hero.jpg');
   background-size: cover;
-  background-position: 62% 42%;
+  background-position: 58% 46%;
 }
 
 /* The photograph is dropped almost to black. The wordmark is the subject of
@@ -183,8 +183,8 @@ section.alt { background: var(--panel-2); }
 .hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(96deg, rgba(8,8,10,.97) 0%, rgba(8,8,10,.93) 38%, rgba(8,8,10,.72) 100%),
-    linear-gradient(to bottom, var(--ink) 0%, rgba(8,8,10,.35) 34%, var(--ink) 99%),
+    linear-gradient(96deg, rgba(8,8,10,.97) 0%, rgba(8,8,10,.9) 40%, rgba(8,8,10,.5) 100%),
+    linear-gradient(to bottom, var(--ink) 0%, rgba(8,8,10,.22) 38%, var(--ink) 99%),
     radial-gradient(120% 78% at 76% -8%, rgba(201,169,97,.12), transparent 58%);
   animation: glow 26s ease-in-out infinite;
 }
