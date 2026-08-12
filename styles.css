@@ -148,7 +148,10 @@ section.alt { background: var(--panel-2); }
 }
 .site-nav a:hover { color: var(--ivory); }
 
-.head-cta { font-size: 11px; padding: 9px 16px; }
+/* No padding override here: the generic .btn rule is declared later in this
+   file and wins on order, so anything set here is silently ignored. */
+.head-cta { font-size: 11px; }
+.ico-phone { display: none; width: 19px; height: 19px; fill: currentColor; }
 
 @media (max-width: 760px) {
   .menu-btn {
@@ -190,8 +193,25 @@ section.alt { background: var(--panel-2); }
   }
   .nav-toggle:checked ~ .site-nav a:last-child { border-bottom: 0; }
 
-  .head-cta { margin-left: 12px; order: 3; }
+  /* The number wrapped onto three lines here and burst out of the header.
+     On a phone it becomes a handset icon the same size as the menu button —
+     the label survives for screen readers on the link's aria-label. */
+  /* Scoped to .site-head so it outranks the generic .btn padding, which is
+     declared further down the stylesheet and would otherwise win on order. */
+  .site-head .head-cta {
+    order: 3; margin-left: 10px; padding: 0; flex: none;
+    width: 46px; height: 46px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cta-num { display: none; }
+  .ico-phone { display: block; }
+
+  .site-head { gap: 0; }
+  .menu-btn { margin-left: auto; }
 }
+
+/* No button anywhere should ever wrap. That is what broke the header. */
+.btn { white-space: nowrap; }
 
 @media (prefers-reduced-motion: reduce) {
   .bars, .bars::before, .bars::after { transition: none; }
