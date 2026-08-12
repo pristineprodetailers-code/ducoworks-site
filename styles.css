@@ -860,3 +860,28 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   .geo-wrap { max-width: 380px; margin: 0 auto; }
   .area-layout .area-grid { grid-template-columns: 1fr; }
 }
+
+/* ---- customer feedback -------------------------------------------------- */
+
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+.quote {
+  position: relative; margin: 0;
+  background: var(--panel); border: 1px solid var(--line);
+  padding: 34px 30px 26px;
+}
+.quote::before {
+  content: "\201C";
+  position: absolute; top: 6px; left: 22px;
+  font-size: 54px; line-height: 1; color: var(--bronze); opacity: .55;
+}
+.quote blockquote p { font-size: 15.5px; color: var(--body); }
+
+.quote figcaption {
+  margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ivory);
+}
+.quote figcaption span { color: var(--muted); }
+
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
