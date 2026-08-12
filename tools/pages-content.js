@@ -90,7 +90,7 @@ module.exports = function (h) {
     image: 'work-feature.jpg',
     title: 'Ceramic Coating Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Ceramic Coating — Cairns to Tully | DucoWorks',
-    description: 'Ceramic coating at our Innisfail workshop, 61 Ryan Street. Paint corrected first, then coated against tropical sun, salt and rain. From $1,290.',
+    description: 'Five-year ceramic coating at our Innisfail workshop, 61 Ryan Street. Paint corrected first, then coated against tropical sun, salt and rain. From $1,290.',
     h1: 'Ceramic Coating',
     strap: 'Protection that outlasts the excitement of collection day. Corrected first, then coated — because a coating locks in whatever is underneath it. Done in the workshop at Innisfail, not in a driveway.',
     schema: service('Ceramic Coating',
@@ -130,7 +130,7 @@ module.exports = function (h) {
           <li><b>The paint is decontaminated</b> — iron fallout and tar chemically removed, then clayed until the surface is glass smooth.</li>
           <li><b>Single-stage machine correction</b> — swirls and light scratches cut back so what gets sealed in is the finish, not the damage.</li>
           <li><b>Panels taped, work done in sections</b>, and the result checked under a light hard enough to show what daylight hides.</li>
-          <li><b>Three-year ceramic coating on the paint.</b> A five-year option is available.</li>
+          <li><b>Five-year ceramic coating on the paint.</b> Glass and wheel coatings can be added for $180 each.</li>
           <li><b>Wash instructions</b> to keep the coating rated, because the maintenance is half the result.</li>
         </ul>
         <p class="foot-note">One to two days at the workshop, <b>61 Ryan Street, Innisfail</b>.
@@ -140,7 +140,7 @@ module.exports = function (h) {
 
     faq: [
       { q: 'How long does a ceramic coating last?',
-        a: 'The standard coating is rated at three years, with a five-year option available. Both need an annual maintenance wash to hold their rating.' },
+        a: 'The coating is rated at five years, and needs an annual maintenance wash to hold that rating. A three-year coating is available if you would rather spend less.' },
       { q: 'Do I still have to wash the car?',
         a: 'Yes, and that surprises people. A coating makes washing easier and less frequent, not unnecessary. Dirt left sitting on any surface long enough will still mark it.' },
       { q: 'Can you coat a brand new car?',

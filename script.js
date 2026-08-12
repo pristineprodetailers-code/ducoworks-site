@@ -65,13 +65,17 @@ var PRICING = {
     cairns:    { label: 'Cairns & northern beaches', fee: 55 }
   },
 
-  // Matched to Tropix's extras, which are $55 / $165 across the board.
+  // Detailing extras matched to Tropix's, which are $55 / $165 across the board.
+  // The two coatings undercut their $220 each — and by the time they go on, the
+  // car is already corrected and masked in the workshop, so the extra work is
+  // small against the extra money.
   addons: {
     pethair:    { label: 'Pet hair removal',         price: 55 },
     engine:     { label: 'Engine bay detail',        price: 55 },
     seats:      { label: 'Seat & carpet extraction', price: 165 },
     // Only sold alongside the Correction & Ceramic package.
-    ceramic5:   { label: 'Five-year ceramic', price: 300, requires: 'correction' }
+    glass:      { label: 'Glass coating', price: 180, requires: 'correction' },
+    wheels:     { label: 'Wheel coating', price: 180, requires: 'correction' }
   }
 };
 
