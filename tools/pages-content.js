@@ -223,7 +223,7 @@ module.exports = function (h) {
     image: 'work-wheel.jpg',
     title: 'Car Detailing Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Full Detail — Mobile Car Detailing, Cairns to Tully',
-    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Decontamination, machine sealant and interior deep clean, at your place. From $385.',
+    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Exterior decontamination, three-month protection and an interior deep clean. From $385.',
     h1: 'Full Detail',
     strap: 'The reset. For a car that has not been touched properly in a year or more — inside and out, in one day.',
     schema: service('Car Detailing',
@@ -237,14 +237,14 @@ module.exports = function (h) {
         'Everything a wash does, and then the work a wash never touches.',
         `<p>A car wash removes what is loose. A detail removes what is bonded — the iron
         particles from brake dust that have embedded in your clear coat, the tar down the
-        sills, the film on the inside of the windscreen you only notice driving into the sun.</p>
+        sills, the film on the inside of the windscreen you only notice driving into the sun.
+        Then it puts protection back on, inside and out, so the result lasts past the weekend.</p>
         <ul class="points">
           <li><b>Snow foam pre-wash and two-bucket hand wash</b> — the loose grit comes off before anything touches the paint.</li>
           <li><b>Chemical decontamination</b> — iron fallout and tar dissolved rather than scrubbed.</li>
-          <li><b>Clay bar</b> — the paint is left glass smooth. Run your hand over it afterwards; it is the part people do not expect.</li>
-          <li><b>Machine-applied sealant</b> — around six months of protection, not six weeks.</li>
+          <li><b>Exterior protection</b> — applied to the paint and rated at three months, so the car stays easier to wash long after the day is over.</li>
           <li><b>Interior deep clean</b> — vents, seals, console and boot, not just the bits you can see from the driver's seat.</li>
-          <li><b>Leather cleaned and conditioned</b>, or fabric shampooed.</li>
+          <li><b>Interior protectant</b> — surfaces treated so the tropical sun has something to work on other than your dash.</li>
           <li><b>Wheels, arches and tyres dressed</b>, glass cleaned in and out.</li>
         </ul>`) +
 
