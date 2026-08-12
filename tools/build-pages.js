@@ -93,6 +93,8 @@ ${JSON.stringify({
     <img class="brand-mark" src="/mark.png" alt="" width="256" height="256">
     <img class="brand-word" src="/wordmark.png" alt="DucoWorks" width="600" height="55">
   </a>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+  <label class="menu-btn" for="nav-toggle" aria-label="Menu"><span class="bars"></span></label>
   <nav class="site-nav" aria-label="Primary">
     <a href="/#packages">Packages</a>
     <a href="/#work">Work</a>
@@ -168,6 +170,11 @@ function foot(p) {
       Cairns, Innisfail &amp; Tully</p>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-solid" href="/#quote">Get a price</a>
+  <a class="btn btn-line" href="tel:+61401881802">Call</a>
+</div>
 
 <script src="/script.js" defer></script>
 

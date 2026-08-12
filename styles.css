@@ -133,6 +133,14 @@ section.alt { background: var(--panel-2); }
 
 @media (max-width: 420px) { .brand-word { display: none; } }
 
+/* Navigation toggles with a checkbox rather than JavaScript. A <details> would
+   be more semantic, but browsers hide a closed <details>'s contents at the slot
+   level, so the desktop links could not be shown again with CSS. This works at
+   both sizes with no JavaScript at all — and a menu that needs JS is a menu
+   that can vanish. */
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.menu-btn { display: none; cursor: pointer; }
+
 .site-nav { display: flex; gap: 26px; }
 .site-nav a {
   font-family: var(--mono); font-size: 11px; letter-spacing: .22em;
@@ -143,8 +151,72 @@ section.alt { background: var(--panel-2); }
 .head-cta { font-size: 11px; padding: 9px 16px; }
 
 @media (max-width: 760px) {
+  .menu-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 46px; height: 46px; margin-left: auto;
+    border: 1px solid var(--line);
+  }
+  .menu-btn:hover { border-color: var(--champagne); }
+
+  /* Keyboard users need to see where they are, and the real control is the
+     visually hidden checkbox. */
+  .nav-toggle:focus-visible + .menu-btn {
+    outline: 2px solid var(--champagne); outline-offset: 3px;
+  }
+
+  /* Three rules that become an X when the panel is open. */
+  .bars, .bars::before, .bars::after {
+    display: block; width: 18px; height: 1px; background: var(--ivory);
+    transition: transform .2s ease, background .2s ease;
+  }
+  .bars::before, .bars::after { content: ""; position: relative; }
+  .bars::before { top: -6px; }
+  .bars::after { top: 5px; }
+  .nav-toggle:checked + .menu-btn .bars { background: transparent; }
+  .nav-toggle:checked + .menu-btn .bars::before { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle:checked + .menu-btn .bars::after { transform: translateY(-5px) rotate(-45deg); }
+
   .site-nav { display: none; }
-  .head-cta { margin-left: auto; }
+
+  .nav-toggle:checked ~ .site-nav {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; left: 0; right: 0; top: var(--head-h);
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    padding: 6px var(--gut) 14px;
+  }
+  .nav-toggle:checked ~ .site-nav a {
+    padding: 15px 0; font-size: 12px; letter-spacing: .24em;
+    border-bottom: 1px solid var(--line-soft); color: var(--ivory);
+  }
+  .nav-toggle:checked ~ .site-nav a:last-child { border-bottom: 0; }
+
+  .head-cta { margin-left: 12px; order: 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bars, .bars::before, .bars::after { transition: none; }
+}
+
+/* ---- persistent action bar (phones) ------------------------------------ */
+
+/* On a phone the page is long and the buttons scroll away. This keeps the two
+   things a customer ever wants to do within reach of a thumb. */
+.sticky-cta { display: none; }
+
+@media (max-width: 760px) {
+  .sticky-cta {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 8px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    padding: 10px var(--gut) calc(10px + env(safe-area-inset-bottom));
+    background: rgba(8, 8, 10, .93);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+  }
+  .sticky-cta .btn { padding: 15px 10px; font-size: 11px; }
+  .sticky-cta .btn-line { background: var(--panel); }
+
+  /* So the bar never sits on top of the last of the content. */
+  body { padding-bottom: 78px; }
 }
 
 /* ---- buttons ----------------------------------------------------------- */
@@ -172,9 +244,14 @@ section.alt { background: var(--panel-2); }
   padding: clamp(76px, 15vh, 130px) 0 clamp(72px, 12vh, 110px);
   overflow: hidden;
   background-color: var(--ink);
-  background-image: url('/photos/bg-hero.jpg');
+  background-image: url('/photos/bg-hero-sm.jpg');
   background-size: cover;
   background-position: 58% 46%;
+}
+
+/* Phones get a 960px copy; only wider screens pay for the full one. */
+@media (min-width: 761px) {
+  .hero { background-image: url('/photos/bg-hero.jpg'); }
 }
 
 /* The photograph is dropped almost to black. The wordmark is the subject of

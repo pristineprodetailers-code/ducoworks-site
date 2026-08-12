@@ -63,6 +63,13 @@ const PHOTOS = [
     note: 'home hero — STI bonnet and scoop'
   },
   {
+    // Phone-sized copy of the same crop. A 1920px hero on a phone is a third
+    // of a megabyte spent on pixels the screen cannot show.
+    file: '04-sti.jpg', out: 'bg-hero-sm.jpg', width: 960,
+    rect: { x: 400, y: 750, w: 2400, h: 1350 }, quality: 0.64,
+    note: 'home hero, phones'
+  },
+  {
     file: '05-reflection.jpg', out: 'bg-band.jpg', width: 1920,
     // Starts at x=650 to cut the house and yard out of the left edge.
     rect: { x: 650, y: 1250, w: 2350, h: 1322 }, quality: 0.7,
@@ -87,7 +94,7 @@ const PHOTOS = [
   },
   {
     file: '02-wheel.jpg', out: 'work-wheel.jpg', width: 800,
-    rect: { x: 0, y: 773, w: 1728, h: 2160 },
+    rect: { x: 0, y: 773, w: 1728, h: 2160 }, quality: 0.74,
     note: 'process shot — hand, brush, wheel'
   },
   {
