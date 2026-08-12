@@ -280,7 +280,7 @@ module.exports = function (h) {
       { q: 'Do you need power and water?',
         a: 'Yes, both, and they are not optional. A standard power point and a tap at the property. The van does not carry water, so if there is no tap the job cannot be done that day.' },
       { q: 'What if it rains?',
-        a: 'This is Far North Queensland, so wet days are planned around. Undercover space at your place is ideal. If there is none, you can bring the car to the workshop at 61 Ryan Street, Innisfail instead — and we will run you home and pick you up, so you are not stuck waiting on it.' },
+        a: 'This is Far North Queensland, so wet days are planned around. Undercover space at your place is ideal. If there is none, you can bring the car to the workshop at 61 Ryan Street, Innisfail instead. If you are local to Innisfail we will run you home and collect you when it is done. From further out that is too far to be practical, so you would need someone to drop you off.' },
       { q: 'Can you get pet hair out?',
         a: 'Yes. It is an add-on rather than standard, because a car with a dog in it every day takes far longer than one without.' },
       { q: 'How often should I have one?',
