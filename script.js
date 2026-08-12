@@ -67,7 +67,6 @@ var PRICING = {
 
   // Matched to Tropix's extras, which are $55 / $165 across the board.
   addons: {
-    headlights: { label: 'Headlight restoration',    price: 165 },
     pethair:    { label: 'Pet hair removal',         price: 55 },
     engine:     { label: 'Engine bay detail',        price: 55 },
     seats:      { label: 'Seat & carpet extraction', price: 165 },

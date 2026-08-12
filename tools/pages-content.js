@@ -94,7 +94,7 @@ module.exports = function (h) {
     h1: 'Ceramic Coating',
     strap: 'Protection that outlasts the excitement of collection day. Corrected first, then coated — because a coating locks in whatever is underneath it. Done in the workshop at Innisfail, not in a driveway.',
     schema: service('Ceramic Coating',
-      'Paint correction followed by a ceramic coating on paint, glass and wheels, carried out at the DucoWorks workshop at 61 Ryan Street, Innisfail.'),
+      'Paint correction followed by a ceramic coating on the paint, carried out at the DucoWorks workshop at 61 Ryan Street, Innisfail.'),
     faqNum: '04',
     closerEyebrow: 'From $1,290',
     closerLine: 'Preserve it properly.',
@@ -130,7 +130,7 @@ module.exports = function (h) {
           <li><b>The paint is decontaminated</b> — iron fallout and tar chemically removed, then clayed until the surface is glass smooth.</li>
           <li><b>Single-stage machine correction</b> — swirls and light scratches cut back so what gets sealed in is the finish, not the damage.</li>
           <li><b>Panels taped, work done in sections</b>, and the result checked under a light hard enough to show what daylight hides.</li>
-          <li><b>Three-year ceramic coating</b> on paint, glass and wheels. A five-year option is available.</li>
+          <li><b>Three-year ceramic coating on the paint.</b> A five-year option is available.</li>
           <li><b>Wash instructions</b> to keep the coating rated, because the maintenance is half the result.</li>
         </ul>
         <p class="foot-note">One to two days at the workshop, <b>61 Ryan Street, Innisfail</b>.
