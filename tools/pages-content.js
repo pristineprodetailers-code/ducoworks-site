@@ -201,7 +201,7 @@ module.exports = function (h) {
         `<p>Paint is decontaminated and clayed first, because polishing over grit drags it
         across the panel. Panels are taped, the work is done in sections rather than all at
         once, and the result is checked under a light hard enough to show what daylight hides.
-        One car a day is the reason that is possible.</p>
+        Working alone is the reason that is possible.</p>
         <p>Correction is included in the Correction &amp; Ceramic package rather than sold
         separately, because doing one without the other rarely makes sense. Both are done at
         the workshop, <b>61 Ryan Street, Innisfail</b> &mdash; machine work needs a controlled
@@ -280,7 +280,7 @@ module.exports = function (h) {
       { q: 'Do you need power and water?',
         a: 'Yes, both, and they are not optional. A standard power point and a tap at the property. The van does not carry water, so if there is no tap the job cannot be done that day.' },
       { q: 'What if it rains?',
-        a: 'This is Far North Queensland, so wet days are planned around. Undercover space is ideal. If neither is available the booking is moved to the next dry day at no charge.' },
+        a: 'This is Far North Queensland, so wet days are planned around. Undercover space at your place is ideal. If there is none, you can bring the car to the workshop at 61 Ryan Street, Innisfail instead — and we will run you home and pick you up, so you are not stuck waiting on it.' },
       { q: 'Can you get pet hair out?',
         a: 'Yes. It is an add-on rather than standard, because a car with a dog in it every day takes far longer than one without.' },
       { q: 'How often should I have one?',
@@ -307,7 +307,7 @@ module.exports = function (h) {
     closerBody: 'Pick your package, size and suburb and the price appears. If it works for you, send it through and you will hear back the same day.',
     body:
       block('01', 'We come to Cairns',
-        'One operator, one car a day, travelling up from Innisfail.',
+        'One operator, travelling up from Innisfail.',
         `<p>Cairns is well served for car washes and thin on people who will spend a full day on
         a single car. DucoWorks runs the other way: one vehicle at a time, at your address,
         finished when the finish is right rather than when the next booking arrives.</p>
@@ -347,7 +347,7 @@ module.exports = function (h) {
       { q: 'Can you come to my workplace?',
         a: 'Yes, as long as the car can be parked safely for the day and there is a power point and a tap you can use.' },
       { q: 'How far ahead do I need to book?',
-        a: 'One car a day means the calendar fills in advance, and correction and ceramic work takes a deposit to hold the day.' }
+        a: 'The calendar fills in advance, so the earlier the better. A deposit holds the day on any booking.' }
     ]
   },
 
@@ -375,8 +375,7 @@ module.exports = function (h) {
         Mourilyan, Flying Fish Point, South Johnstone, Mena Creek and the roads between them.
         The same day's work costs less here than it does at either end of the coast, simply
         because the van is already in town.</p>
-        <p>One car a day, at your address, finished properly rather than fitted around three
-        other jobs.</p>`) +
+        <p>At your address, finished properly rather than rushed to fit the next job in.</p>`) +
 
       block('02', 'Cane country is hard on a car',
         'Harvest dust, humidity and some of the heaviest rain in the country.',
@@ -436,8 +435,8 @@ module.exports = function (h) {
         `<p>The southern run covers Silkwood, El Arish, Mission Beach, Wongaling Beach, Tully
         and Tully Heads, with Cardwell on request. Travel is a flat $25 on top of the job and
         appears in the price before you book.</p>
-        <p>It is one car a day wherever the van ends up, so a Tully booking gets the same full
-        day a Cairns one does.</p>`) +
+        <p>A Tully booking gets the same care as one in Cairns. The drive does not change
+        the standard.</p>`) +
 
       block('02', 'The wettest town in Australia',
         'Tully has the rainfall record and the gumboot to prove it. Your car knows about it.',

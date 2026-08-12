@@ -162,7 +162,7 @@ function foot(p) {
         <h4>Contact</h4>
         <p><a href="${PHONE_LINK}">${PHONE}</a></p>
         <p><a href="mailto:ducoworks1@gmail.com">ducoworks1@gmail.com</a></p>
-        <p>Mon&ndash;Sat, 7:00am&ndash;5:00pm</p>
+        <p>Seven days, 7:00am&ndash;5:00pm</p>
       </div>
     </div>
 
