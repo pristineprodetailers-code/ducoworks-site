@@ -48,8 +48,24 @@ if (!chrome) {
   process.exit(1);
 }
 
-/* rect is in the master's own pixels: x, y, w, h. w:h is always 4:5. */
+/* rect is in the master's own pixels: x, y, w, h.
+   Gallery tiles are 4:5. The two wide crops below are 16:9 and exist to sit
+   behind text as page backgrounds, so they are chosen to be abstract — a band
+   of panel and reflection rather than a whole recognisable car. A background
+   that competes with the headline is a background that has failed. */
 const PHOTOS = [
+  {
+    file: '03-rangerover.jpg', out: 'bg-hero.jpg', width: 1920,
+    // Right edge stops short of the pallet and shed wall at x=2190.
+    rect: { x: 0, y: 1150, w: 2100, h: 1181 }, quality: 0.7,
+    note: 'home hero — headlight, guard and bonnet reflections'
+  },
+  {
+    file: '05-reflection.jpg', out: 'bg-band.jpg', width: 1920,
+    // Starts at x=650 to cut the house and yard out of the left edge.
+    rect: { x: 650, y: 1250, w: 2350, h: 1322 }, quality: 0.7,
+    note: 'mid-page band — the reflection across the door'
+  },
   {
     file: '03-rangerover.jpg', out: 'work-feature.jpg', width: 1200,
     rect: { x: 0, y: 400, w: 2100, h: 2625 },
@@ -80,9 +96,12 @@ const PHOTOS = [
 
 function build(photo) {
   const src = path.join(SRC, photo.file).replace(/\\/g, '/');
-  const w = photo.width;
-  const h = Math.round(w * 5 / 4);
   const r = photo.rect;
+  const w = photo.width;
+  // Height follows the crop's own shape, so 4:5 tiles and 16:9 bands can
+  // share this function without either being squashed.
+  const h = Math.round(w * r.h / r.w);
+  const q = photo.quality || QUALITY;
 
   const page =
     '<!doctype html><meta charset="utf-8"><title>x</title>' +
@@ -94,7 +113,7 @@ function build(photo) {
       'var g=c.getContext("2d");' +
       'g.imageSmoothingQuality="high";' +
       'g.drawImage(i,' + r.x + ',' + r.y + ',' + r.w + ',' + r.h + ',0,0,' + w + ',' + h + ');' +
-      'document.getElementById("out").textContent=c.toDataURL("image/jpeg",' + QUALITY + ');' +
+      'document.getElementById("out").textContent=c.toDataURL("image/jpeg",' + q + ');' +
     '};' +
     'i.onerror=function(){document.getElementById("out").textContent="ERR";};' +
     'i.src="file:///' + src + '";' +

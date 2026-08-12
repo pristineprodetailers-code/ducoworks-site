@@ -13,3 +13,6 @@ tools/_photo.html
 # number plates and their homes. Only the cropped files in /photos/ go live.
 # Keep the masters locally so tools/build-photos.js can be re-run.
 tools/source/photos/
+
+# Local screenshot harness, never published
+_shot.html

@@ -171,14 +171,21 @@ section.alt { background: var(--panel-2); }
   position: relative; border-top: 0;
   padding: clamp(76px, 15vh, 130px) 0 clamp(72px, 12vh, 110px);
   overflow: hidden;
+  background-color: var(--ink);
+  background-image: url('/photos/bg-hero.jpg');
+  background-size: cover;
+  background-position: 62% 42%;
 }
 
-/* the rake of light across a panel — the one visual the brand allows */
+/* The photograph is dropped almost to black. The wordmark is the subject of
+   this screen; the car is only there to say the work is real. Anything
+   brighter and the champagne in the logo stops reading. */
 .hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(120% 78% at 76% -8%, rgba(201,169,97,.12), transparent 58%),
-    linear-gradient(196deg, rgba(242,239,232,.05) 0%, transparent 42%);
+    linear-gradient(96deg, rgba(8,8,10,.97) 0%, rgba(8,8,10,.93) 38%, rgba(8,8,10,.72) 100%),
+    linear-gradient(to bottom, var(--ink) 0%, rgba(8,8,10,.35) 34%, var(--ink) 99%),
+    radial-gradient(120% 78% at 76% -8%, rgba(201,169,97,.12), transparent 58%);
   animation: glow 26s ease-in-out infinite;
 }
 
@@ -561,6 +568,23 @@ ul.plain li:last-child { border-bottom: 0; }
 @media (max-width: 760px) { .area-grid { grid-template-columns: 1fr; } }
 
 /* ---- the standard ------------------------------------------------------ */
+
+/* A second photographic band, deeper into the page. Text only over this one,
+   so it can carry a little more of the image than the hero does. */
+#standard {
+  position: relative;
+  background-color: var(--panel-2);
+  background-image: url('/photos/bg-band.jpg');
+  background-size: cover;
+  background-position: 50% 58%;
+}
+#standard::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(92deg, rgba(8,8,10,.96) 0%, rgba(8,8,10,.9) 46%, rgba(8,8,10,.78) 100%),
+    linear-gradient(to bottom, var(--ink) 0%, rgba(8,8,10,.42) 40%, var(--ink) 100%);
+}
+#standard .wrap { position: relative; }
 
 .std-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
 .std h3 { margin-bottom: 14px; }
