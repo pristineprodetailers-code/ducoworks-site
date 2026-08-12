@@ -359,7 +359,7 @@ section p + ul.points, section ul.points + p { margin-top: 20px; }
 .dur {
   font-family: var(--mono); font-size: 11px; letter-spacing: .2em;
   text-transform: uppercase; color: var(--muted);
-  margin: 12px 0 22px; padding-bottom: 22px; border-bottom: 1px solid var(--line);
+  margin: 12px 0 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line);
 }
 
 .card ul { list-style: none; }
@@ -372,7 +372,15 @@ section p + ul.points, section ul.points + p { margin-top: 20px; }
   width: 8px; height: 1px; background: var(--bronze);
 }
 
-.fit { margin-top: auto; padding-top: 22px; font-size: 14px; color: var(--muted); }
+/* The card sells the idea; the package page carries the detail. Keeping the
+   inclusion lists off here is what lets the three cards breathe. */
+.fit {
+  margin-top: 4px; padding-top: 0; font-size: 15px; color: var(--body);
+  max-width: 34ch;
+}
+
+.card-cta { margin-top: auto; padding-top: 14px; padding-bottom: 14px; width: 100%; }
+.card { min-height: 340px; }
 
 .more {
   margin-top: 14px; font-family: var(--mono); font-size: 10.5px;

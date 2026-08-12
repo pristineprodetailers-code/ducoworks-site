@@ -17,6 +17,72 @@ module.exports = function (h) {
 
   return [
 
+  /* ------------------------------------------------------------ MAINTENANCE */
+  {
+    slug: 'maintenance-detail',
+    crumb: 'Maintenance Detail',
+    image: 'work-foam.jpg',
+    title: 'Maintenance Detail | Cairns to Tully | DucoWorks',
+    ogTitle: 'Maintenance Detail — Cairns to Tully | DucoWorks',
+    description: 'Regular mobile car detailing across Cairns, Innisfail and Tully. Hand wash, wheels, glass, interior and a spray sealant, at your place. From $190.',
+    h1: 'Maintenance Detail',
+    strap: 'For a car that is already looked after and needs to stay that way. Two to three hours, and it never gets away from you.',
+    schema: service('Maintenance Car Detail',
+      'Regular maintenance detailing including hand wash, wheels, glass, interior and spray sealant, performed at the customer\'s home.'),
+    faqNum: '04',
+    closerEyebrow: 'From $190',
+    closerLine: 'Keep it that way.',
+    closerBody: 'The cheapest detailing you will ever buy is the detailing that stops a car needing the expensive kind.',
+    body:
+      block('01', 'What it covers',
+        'A proper wash, done the way that does not put swirls into your paint.',
+        `<ul class="points">
+          <li><b>Snow foam pre-wash and two-bucket hand wash</b> — the loose grit lifts off before anything touches the paint. This is the part a $30 car wash skips, and it is the reason their cars end up swirled.</li>
+          <li><b>Wheels, arches and tyres dressed</b> — brake dust off before it bakes on.</li>
+          <li><b>Glass in and out</b>, streak free. The inside is the half nobody does.</li>
+          <li><b>Interior vacuum</b>, surfaces wiped and dressed.</li>
+          <li><b>Spray sealant</b> — six to eight weeks of protection, topped up each visit.</li>
+        </ul>`) +
+
+      block('02', 'Why bother, when a car wash is $30',
+        'Because the $30 wash is what causes the damage the expensive work has to undo.',
+        `<p>An automatic wash drags the same brushes across a thousand cars, and a servo bucket
+        holds the grit from the last one. Every pass puts fine scratches into the clear coat.
+        Do it fortnightly for two years and you have paid for the swirl marks that then cost
+        real money to machine out.</p>
+        <p>A maintenance detail is the opposite trade. It keeps the protection topped up and
+        the paint level, so the car never reaches the point of needing
+        <a href="/paint-correction/">correction</a> at all.</p>` +
+        points([
+          { h: 'It holds its value', p: ' — a car that has never been let go is worth more, and takes less to present when you sell it.' },
+          { h: 'It stays easy', p: ' — sealed paint releases dirt. Neglected paint holds it, and then needs scrubbing, which is where the damage starts.' },
+          { h: 'It is predictable', p: ' — a known price, a known slot, no surprises.' }
+        ]), true) +
+
+      block('03', 'How often',
+        'Most cars up here want it quarterly. Some want it monthly.',
+        `<p>Far North Queensland is harder on a car than most people allow for — tropical UV,
+        salt on the breeze near the coast, harvest dust inland and a wet season that keeps
+        everything damp. A car parked outside here needs more attention than the same car in a
+        Brisbane garage.</p>
+        <p>If your car has not had a proper detail in a year or more, start with
+        <a href="/full-detail/">a full detail</a> and keep it there with maintenance visits.
+        Starting here on a neglected car is money spent tidying rather than fixing.</p>
+        <p class="foot-note">From $190 for a small car, two to three hours on site.
+        <a href="/#quote">Get the figure for your car</a>.</p>`),
+
+    faq: [
+      { q: 'How is this different to a car wash?',
+        a: 'A wash removes what is loose. This is a hand wash done in a way that does not scratch the paint, plus wheels, glass, interior and a sealant that keeps working for weeks afterwards.' },
+      { q: 'How often should I book one?',
+        a: 'Quarterly suits most cars in this climate. Cars parked outside, near the coast, or under trees do better monthly.' },
+      { q: 'My car is filthy. Can I start with this?',
+        a: 'If it has been neglected for a year or more, a full detail first will get far more out of it. Otherwise you are paying to tidy rather than to fix.' },
+      { q: 'Do you need power and water?',
+        a: 'A standard power point is needed for machine polishing. Water is carried, so a tap is helpful but not essential.' }
+    ]
+  },
+
   /* ---------------------------------------------------------------- CERAMIC */
   {
     slug: 'ceramic-coating',
