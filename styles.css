@@ -805,3 +805,58 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
 .area-map .base .base-note {
   font-size: 10.5px; letter-spacing: .18em; fill: var(--champagne); text-transform: none;
 }
+
+/* ---- geographic service area map ---------------------------------------- */
+
+.area-layout {
+  display: grid; grid-template-columns: 330px 1fr; gap: 30px; align-items: start;
+}
+.area-layout .area-grid { grid-template-columns: 1fr 1fr; }
+
+.geo-wrap { margin: 0; border: 1px solid var(--line); background: var(--panel-2); padding: 14px; }
+.geo-map { display: block; width: 100%; height: auto; }
+.geo-wrap figcaption {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--muted); margin-top: 12px; text-align: center;
+}
+
+.geo-map .sea  { fill: #0a0d11; }
+.geo-map .land { fill: var(--panel); stroke: none; }
+.geo-map .coast { fill: none; stroke: var(--bronze); stroke-width: 1.2; opacity: .85; }
+
+/* The travel bands run across the land, deepening toward the base. */
+.geo-map .zone { mix-blend-mode: screen; }
+.geo-map .zone-north { fill: rgba(201,169,97,.05); }
+.geo-map .zone-home  { fill: rgba(201,169,97,.14); }
+.geo-map .zone-south { fill: rgba(201,169,97,.07); }
+.geo-map .zone-ask   { fill: rgba(201,169,97,.03); }
+
+.geo-map .zone-label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-anchor: end; fill: var(--muted);
+}
+.geo-map .sea-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .26em;
+  text-transform: uppercase; text-anchor: end; fill: #3d4a55;
+}
+
+.geo-map .geo-town circle { fill: var(--ink); stroke: var(--bronze); stroke-width: 1.2; }
+.geo-map .geo-town text {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; fill: var(--body);
+}
+
+.geo-map .geo-base circle:first-child { fill: none; stroke: var(--champagne); stroke-width: 1; opacity: .45; }
+.geo-map .geo-base circle:last-of-type { fill: var(--champagne); stroke: none; }
+.geo-map .geo-base text {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .14em;
+  text-transform: uppercase; fill: var(--ivory);
+}
+.geo-map .geo-base .geo-base-note {
+  font-size: 9.5px; letter-spacing: .16em; fill: var(--champagne); text-transform: none;
+}
+
+@media (max-width: 900px) {
+  .area-layout { grid-template-columns: 1fr; gap: 26px; }
+  .geo-wrap { max-width: 380px; margin: 0 auto; }
+  .area-layout .area-grid { grid-template-columns: 1fr; }
+}
