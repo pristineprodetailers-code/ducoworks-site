@@ -24,7 +24,7 @@ module.exports = function (h) {
     image: 'work-foam.jpg',
     title: 'Maintenance Detail | Cairns to Tully | DucoWorks',
     ogTitle: 'Maintenance Detail — Cairns to Tully | DucoWorks',
-    description: 'Regular mobile car detailing across Cairns, Innisfail and Tully. Hand wash, wheels, glass, interior and a spray sealant, at your place. From $190.',
+    description: 'Regular mobile car detailing across Cairns, Innisfail and Tully. Hand wash, wheels, glass, interior and three-month protection, at your place. From $190.',
     h1: 'Maintenance Detail',
     strap: 'For a car that is already looked after and needs to stay that way. Two to three hours, and it never gets away from you.',
     schema: service('Maintenance Car Detail',
@@ -41,7 +41,7 @@ module.exports = function (h) {
           <li><b>Wheels, arches and tyres dressed</b> — brake dust off before it bakes on.</li>
           <li><b>Glass in and out</b>, streak free. The inside is the half nobody does.</li>
           <li><b>Interior vacuum</b>, surfaces wiped and dressed.</li>
-          <li><b>Spray sealant</b> — six to eight weeks of protection, topped up each visit.</li>
+          <li><b>Exterior protection</b> — rated at three months, reapplied each visit so it never lapses.</li>
         </ul>`) +
 
       block('02', 'Why bother, when a car wash is $30',
@@ -73,7 +73,7 @@ module.exports = function (h) {
 
     faq: [
       { q: 'How is this different to a car wash?',
-        a: 'A wash removes what is loose. This is a hand wash done in a way that does not scratch the paint, plus wheels, glass, interior and a sealant that keeps working for weeks afterwards.' },
+        a: 'A wash removes what is loose. This is a hand wash done in a way that does not scratch the paint, plus wheels, glass, interior, and protection rated at three months that keeps working long after the visit.' },
       { q: 'How often should I book one?',
         a: 'Quarterly suits most cars in this climate. Cars parked outside, near the coast, or under trees do better monthly.' },
       { q: 'My car is filthy. Can I start with this?',
@@ -131,7 +131,7 @@ module.exports = function (h) {
           <li><b>Single-stage machine correction</b> — swirls and light scratches cut back so what gets sealed in is the finish, not the damage.</li>
           <li><b>Panels taped, work done in sections</b>, and the result checked under a light hard enough to show what daylight hides.</li>
           <li><b>Three-year ceramic coating</b> on paint, glass and wheels. A five-year option is available.</li>
-          <li><b>Aftercare and wash instructions</b>, because the maintenance is half the result.</li>
+          <li><b>Wash instructions</b> to keep the coating rated, because the maintenance is half the result.</li>
         </ul>
         <p class="foot-note">One to two days on site depending on the vehicle. Pricing starts at
         $1,290 for a small car and is confirmed on inspection &mdash;
