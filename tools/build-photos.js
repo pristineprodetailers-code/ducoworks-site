@@ -69,14 +69,16 @@ const PHOTOS = [
     note: 'mid-page band — the reflection across the door'
   },
   {
-    file: '03-rangerover.jpg', out: 'work-feature.jpg', width: 1200,
-    rect: { x: 0, y: 400, w: 2100, h: 2625 },
-    note: 'feature — keeps the pallet and shed clutter out of frame'
+    // Promoted to the feature slot. The car mirrored in the door is the
+    // clearest proof of finish in the whole set.
+    file: '05-reflection.jpg', out: 'work-feature.jpg', width: 1200,
+    rect: { x: 600, y: 300, w: 2400, h: 3000 },
+    note: 'feature — crops off the neighbouring house on the left'
   },
   {
-    file: '05-reflection.jpg', out: 'work-reflection.jpg', width: 800,
-    rect: { x: 600, y: 300, w: 2400, h: 3000 },
-    note: 'crops off the neighbouring house on the left'
+    file: '04-sti.jpg', out: 'work-guard.jpg', width: 800,
+    rect: { x: 700, y: 1700, w: 1200, h: 1500 },
+    note: 'gold wheel and front guard'
   },
   {
     file: '04-sti.jpg', out: 'work-sti.jpg', width: 800,

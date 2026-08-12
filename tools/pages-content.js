@@ -89,7 +89,7 @@ module.exports = function (h) {
   {
     slug: 'paint-correction',
     crumb: 'Paint Correction',
-    image: 'work-reflection.jpg',
+    image: 'work-guard.jpg',
     title: 'Cut & Polish | Paint Correction Cairns | DucoWorks',
     ogTitle: 'Paint Correction — Cairns to Tully | DucoWorks',
     description: 'Machine paint correction across Cairns, Innisfail and Tully. Swirl marks, light scratches and faded paint cut back and refinished. Mobile, at your place.',
@@ -154,7 +154,7 @@ module.exports = function (h) {
   {
     slug: 'full-detail',
     crumb: 'Full Detail',
-    image: 'work-sti.jpg',
+    image: 'work-wheel.jpg',
     title: 'Car Detailing Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Full Detail — Mobile Car Detailing, Cairns to Tully',
     description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Decontamination, machine sealant and interior deep clean, at your place. From $385.',
@@ -219,7 +219,7 @@ module.exports = function (h) {
   {
     slug: 'cairns',
     crumb: 'Cairns',
-    image: 'work-reflection.jpg',
+    image: 'work-sti.jpg',
     placename: 'Cairns, Queensland',
     title: 'Mobile Car Detailing Cairns | We Come To You | DucoWorks',
     ogTitle: 'Mobile Car Detailing Cairns | DucoWorks',
@@ -282,7 +282,7 @@ module.exports = function (h) {
   {
     slug: 'innisfail',
     crumb: 'Innisfail',
-    image: 'work-feature.jpg',
+    image: 'work-foam.jpg',
     placename: 'Innisfail, Queensland',
     title: 'Car Detailing Innisfail | Mobile Detailing | DucoWorks',
     ogTitle: 'Car Detailing Innisfail | DucoWorks',
@@ -344,7 +344,7 @@ module.exports = function (h) {
   {
     slug: 'tully',
     crumb: 'Tully & Mission Beach',
-    image: 'work-foam.jpg',
+    image: 'work-feature.jpg',
     placename: 'Tully, Queensland',
     title: 'Car Detailing Tully & Mission Beach | Mobile | DucoWorks',
     ogTitle: 'Car Detailing Tully & Mission Beach | DucoWorks',
