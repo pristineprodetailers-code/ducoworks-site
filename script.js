@@ -88,6 +88,14 @@ var elLines = document.getElementById('est-lines');
 var elSummary = document.getElementById('quote_summary');
 var elQuoted = document.getElementById('quoted-line');
 
+/* The estimate currently on screen, so an enquiry can carry its own dollar
+   figure into the app without re-parsing the summary string. */
+var lastTotal = 0;
+
+/* A copy of every enquiry goes here so it lands in the pipeline, not just the
+   inbox. The email remains the source of truth — see the submit handler. */
+var LEADS_ENDPOINT = 'https://ducoworks-app.netlify.app/api/leads';
+
 function money(n) {
   return '$' + Math.round(n).toLocaleString('en-AU');
 }
@@ -172,6 +180,7 @@ function update() {
 
   elTotal.textContent = money(total);
   elDur.textContent = pkg.duration;
+  lastTotal = total;
 
   /* The suburb question is about travel, so it is dimmed out when the car is
      coming to Innisfail instead. */
@@ -244,6 +253,32 @@ if (form) {
 
     submitBtn.disabled = true;
     setStatus('Sending…');
+
+    /* Drop a copy into the DucoWorks app. Deliberately fire-and-forget: the
+       email below is what actually matters, so this must never delay the
+       customer, change what they see, or fail the submission if the app is
+       down. keepalive lets it finish even if the page moves on. */
+    try {
+      fetch(LEADS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          email: data.email,
+          source: 'Website',
+          value: lastTotal,
+          message: [
+            data.vehicle,
+            data.suburb,
+            data.preferred_date ? 'Preferred: ' + data.preferred_date : '',
+            data.notes,
+            data.quote_summary
+          ].filter(Boolean).join(' — ')
+        })
+      }).catch(function () { /* the email is the source of truth */ });
+    } catch (err) { /* never let this reach the customer */ }
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
