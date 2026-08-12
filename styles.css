@@ -763,3 +763,45 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   font-size: 14.5px;
 }
 .notice b { color: var(--champagne); font-weight: 600; }
+
+/* ---- service area map --------------------------------------------------- */
+
+/* A schematic of the run, not a real map. A customer wants one answer — what
+   does travel cost from my town — and a Google embed buries that under tiles,
+   cookies and third-party JavaScript. This is 3 kB of inline SVG. */
+.map-scroll {
+  overflow-x: auto;
+  margin-bottom: 44px;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+.area-map { display: block; width: 100%; min-width: 660px; height: auto; }
+
+.area-map .band rect { fill: var(--panel); stroke: var(--line); stroke-width: 1; }
+.area-map .band-home { fill: #16130d; stroke: var(--bronze); }
+
+.area-map .band-fee text {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .18em;
+  text-transform: uppercase; text-anchor: middle; fill: var(--muted);
+}
+.area-map .band-fee .fee { font-size: 15px; fill: var(--ivory); letter-spacing: .06em; }
+.area-map .band-fee .free { fill: var(--champagne); }
+
+.area-map .road { stroke: var(--line); stroke-width: 3; }
+.area-map .road-lit { stroke-width: 1; }
+
+.area-map .stop circle { fill: var(--ink); stroke: var(--bronze); stroke-width: 1.5; }
+.area-map .stop text {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em;
+  text-anchor: middle; fill: var(--body);
+}
+
+.area-map .base circle:first-child { fill: var(--champagne); stroke: none; }
+.area-map .base circle:last-of-type { fill: none; stroke: var(--champagne); stroke-width: 1; opacity: .5; }
+.area-map .base text {
+  font-family: var(--mono); font-size: 13px; letter-spacing: .16em;
+  text-anchor: middle; fill: var(--ivory); text-transform: uppercase;
+}
+.area-map .base .base-note {
+  font-size: 10.5px; letter-spacing: .18em; fill: var(--champagne); text-transform: none;
+}
