@@ -438,6 +438,15 @@ if (!stillness.matches) {
     }
   });
 
+  /* Safety net. Hiding content and waiting for an observer means that if the
+     observer never fires — an old browser, a hostile extension, something
+     unforeseen — the page stays blank forever. If nothing at all has been
+     revealed a few seconds in, show everything and stop pretending. */
+  setTimeout(function () {
+    if (document.querySelector('.reveal.in')) { return; }
+    items.forEach(function (el) { el.classList.add('in'); });
+  }, 3000);
+
   /* The one number on the page worth counting up. Real figure, so it counts to
      the number in the markup rather than to anything invented here. */
   var proof = document.querySelector('.proof b');
