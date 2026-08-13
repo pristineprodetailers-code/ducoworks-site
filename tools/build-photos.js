@@ -135,6 +135,20 @@ const PHOTOS = [
     // neighbour's house sits in the top right corner above it.
     rect: { x: 600, y: 900, w: 1400, h: 1750 },
     note: 'wet blue door — the reflection is the point'
+  },
+
+  /* Two more 16:9 bands to sit behind text, chosen the same way as bg-band:
+     a stripe of panel and reflection, not a car anyone could identify. They
+     live under a heavy gradient, so they read as texture rather than picture. */
+  {
+    file: '06-dmax.jpg', out: 'bg-quotes.jpg', width: 1920,
+    rect: { x: 100, y: 1180, w: 1600, h: 900 }, quality: 0.68,
+    note: 'behind the reviews — black flank and door handles'
+  },
+  {
+    file: '08-blue-panel.jpg', out: 'bg-faq.jpg', width: 1920,
+    rect: { x: 500, y: 1150, w: 2400, h: 1350 }, quality: 0.68,
+    note: 'behind the questions — blue door and reflection'
   }
 ];
 

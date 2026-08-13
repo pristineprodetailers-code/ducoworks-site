@@ -375,3 +375,94 @@ if (!stillness.matches) {
     '.card, .shot, .area-col, .std, #quote .calc fieldset, #quote .estimate, .book-form'
   )));
 }
+
+/* ==========================================================================
+   Scroll reveals and the count-up                  added Aug 2026
+
+   Nothing is hidden in the markup — the .reveal class is added here, so a
+   visitor with JavaScript off sees the whole page as normal rather than a
+   blank one. Anything already on screen at load is revealed immediately, so
+   the top of the page never animates in under the reader.
+   ========================================================================== */
+
+(function () {
+  var reduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) { return; }
+
+  /* Block-level things worth arriving one at a time. The hero is left out:
+     it already has its own typing headline and light sweep. */
+  var GROUPS = [
+    'section:not(.hero) > .wrap > h2',
+    'section:not(.hero) > .wrap > .intro',
+    'section:not(.hero) > .wrap > .num',
+    '.shots > .shot',
+    '.cards > .card',
+    '.quote-grid > *',
+    '.std-grid > *',
+    '.area-grid > *',
+    '.faq-list > *'
+  ];
+
+  var items = [];
+  GROUPS.forEach(function (sel) {
+    var found = document.querySelectorAll(sel);
+    for (var i = 0; i < found.length; i++) {
+      var el = found[i];
+      if (items.indexOf(el) !== -1) { continue; }
+      el.classList.add('reveal');
+      /* Stagger within a row, capped at four so a long list does not end up
+         waiting a second and a half for its last item. */
+      var pos = 0, sib = el;
+      while ((sib = sib.previousElementSibling)) { pos++; }
+      if (pos > 0) { el.classList.add('d' + Math.min(pos, 4)); }
+      items.push(el);
+    }
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) { return; }
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+
+  items.forEach(function (el) {
+    /* Already on screen when the page loads — show it now, do not animate. */
+    var box = el.getBoundingClientRect();
+    if (box.top < window.innerHeight * 0.92) {
+      el.classList.add('in');
+    } else {
+      io.observe(el);
+    }
+  });
+
+  /* The one number on the page worth counting up. Real figure, so it counts to
+     the number in the markup rather than to anything invented here. */
+  var proof = document.querySelector('.proof b');
+  if (proof) {
+    var m = proof.textContent.match(/(\D*)(\d+)(.*)/);
+    if (m) {
+      var prefix = m[1], target = parseInt(m[2], 10), suffix = m[3];
+      var started = false;
+      var run = function () {
+        if (started) { return; }
+        started = true;
+        var t0 = null, ms = 1100;
+        var step = function (now) {
+          if (t0 === null) { t0 = now; }
+          var p = Math.min(1, (now - t0) / ms);
+          var eased = 1 - Math.pow(1 - p, 3);
+          proof.textContent = prefix + Math.round(target * eased) + suffix;
+          if (p < 1) { requestAnimationFrame(step); }
+        };
+        requestAnimationFrame(step);
+      };
+      var pio = new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) { run(); pio.disconnect(); }
+      }, { threshold: 0.6 });
+      pio.observe(proof);
+    }
+  }
+})();
