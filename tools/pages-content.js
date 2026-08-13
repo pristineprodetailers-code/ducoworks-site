@@ -17,6 +17,83 @@ module.exports = function (h) {
 
   return [
 
+
+  /* ------------------------------------------------------- WHAT IT COSTS */
+  /* Written to answer the question people actually type. Every figure here
+     is lifted from the PRICING block in script.js — if prices change there,
+     they must change here too. No competitor's prices are quoted: they move,
+     and publishing someone else's numbers as fact is a claim we cannot keep
+     true. */
+  {
+    slug: 'what-detailing-costs',
+    crumb: 'What It Costs',
+    image: 'work-bluepanel.jpg',
+    title: 'What Car Detailing Costs | Cairns to Tully | DucoWorks',
+    ogTitle: 'What Car Detailing Actually Costs — Cairns to Tully',
+    description: 'What car detailing costs across Cairns, Innisfail and Tully. Real prices from $190, what changes them, and why most detailers will not tell you a figure.',
+    h1: 'What car detailing<br>actually costs',
+    strap: 'Around here a maintenance detail starts at $190, a full detail at $385, and paint correction with a ceramic coating at $1,290. Here is what moves those numbers.',
+    schema: service('Car Detailing Pricing',
+      'Published pricing for mobile car detailing, paint correction and ceramic coating across Cairns, Innisfail and Tully.'),
+    faqNum: '05',
+    closerEyebrow: 'No guessing',
+    closerLine: 'Price your own car.',
+    closerBody: 'The calculator on the home page gives you the figure for your car, your suburb and its condition, before you speak to anyone.',
+    body:
+      block('01', 'The short answer',
+        'Three levels of work. These are the starting prices, for a small car.',
+        `<ul class="points">
+          <li><b>Maintenance Detail &mdash; from $190.</b> A car that is already looked after and needs to stay that way. Two to three hours.</li>
+          <li><b>Full Detail &mdash; from $385.</b> The reset, for a car that has not been touched properly in a year or more. Five to six hours.</li>
+          <li><b>Correction &amp; Ceramic &mdash; from $1,290.</b> Swirls machined out, then coated so the finish holds for five years. One to two days at the Innisfail workshop.</li>
+        </ul>
+        <p>Those are real prices, not a range designed to get you on the phone. You can
+        <a href="/#quote">price your own car</a> in about thirty seconds.</p>`) +
+
+      block('02', 'What changes the price',
+        'Four things, and only four.',
+        `<ul class="points">
+          <li><b>The size of the car.</b> A hatch is not a seven-seater. Small, medium and large &mdash; a Full Detail runs $385, $460 or $540.</li>
+          <li><b>Its condition.</b> A well-kept car is the base price. Average adds 10%, neglected adds 25%. Hours are hours.</li>
+          <li><b>Where you are.</b> Innisfail and within 25km is free. Silkwood to Tully $25, Babinda to Edmonton $35, Cairns and the northern beaches $55. Correction and coating are done at the workshop, so travel does not apply.</li>
+          <li><b>Anything extra.</b> Pet hair $55, engine bay $55, seat and carpet extraction $165. Glass or wheel coating $180 each, alongside a correction.</li>
+        </ul>`, true) +
+
+      block('03', 'Why nobody will tell you a price',
+        'Because a number on a website can be compared, and a number on the phone can be argued.',
+        `<p>Most detailers publish nothing. You ring, you describe your car, and you get a
+        figure shaped by how the call is going. It is not dishonest &mdash; every car really is
+        different &mdash; but it makes comparing two quotes almost impossible, and it wastes an
+        afternoon.</p>
+        <p>The prices above are published because a car can be priced from four facts:
+        how big it is, what state it is in, where it is, and what you want done. If a quote
+        needs more than that, it is usually the quote that needs it, not the car.</p>
+        <p>Boats, caravans, trucks and fleet work are the genuine exception. Those are quoted
+        on inspection because there is no useful starting figure.</p>`) +
+
+      block('04', 'What to ask before you book anyone',
+        'Four questions that sort a detailer from a bloke with a bucket.',
+        `<ul class="points">
+          <li><b>How is the car washed?</b> Snow foam and two buckets, or one bucket and a sponge. The second is how swirls get put into paint that did not have them.</li>
+          <li><b>How long does the coating actually last?</b> Not what it says on the bottle &mdash; what is guaranteed, and what happens if it fails.</li>
+          <li><b>What is not included?</b> The honest answer is never "nothing".</li>
+          <li><b>Do you need power and water?</b> A mobile detailer working at your place needs both. Ours does not carry water &mdash; if there is no tap, the job cannot happen that day.</li>
+        </ul>`, true),
+
+    faq: [
+      { q: 'How much does a full car detail cost in Cairns?',
+        a: 'A Full Detail starts at $385 for a small car, $460 for a medium and $540 for a large. Travel to Cairns and the northern beaches is $55 on top. If the car is in average or neglected condition, 10% or 25% is added, because the work takes longer.' },
+      { q: 'Why do car detailing prices vary so much?',
+        a: 'Four things: the size of the car, its condition, how far it has to be travelled to, and any extras such as pet hair or seat extraction. Beyond that, most of the variation between detailers is how much work is actually being done — a two-hour wash and a six-hour detail are both called detailing.' },
+      { q: 'How much is a ceramic coating?',
+        a: 'Correction and ceramic coating starts at $1,290 for a small car, $1,590 medium and $1,890 large. That includes machining the swirls out first, which is most of the work — coating unprepared paint just seals the defects in. The coating holds for five years. The car is dropped at the Innisfail workshop for one to two days.' },
+      { q: 'Is mobile detailing more expensive?',
+        a: 'Not here. Detailing is done at your place across Cairns, Innisfail and Tully, and the only mobile-specific cost is travel: nothing within 25km of Innisfail, $25 to Tully, $35 to Babinda or Edmonton, $55 to Cairns. Paint correction and coating are done at the workshop because they need controlled conditions.' },
+      { q: 'What is the cheapest detail you do?',
+        a: 'A Maintenance Detail at $190 for a small, well-kept car in the Innisfail area. It is meant for a car that is already in good shape — it is not a rescue. A car that has not been detailed in a year wants the Full Detail instead.' }
+    ]
+  },
+
   /* ------------------------------------------------------------ MAINTENANCE */
   {
     slug: 'maintenance-detail',
