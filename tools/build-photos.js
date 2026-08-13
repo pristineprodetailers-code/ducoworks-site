@@ -102,6 +102,39 @@ const PHOTOS = [
     // Right edge stops at 2280; the plate starts around x=2560.
     rect: { x: 1480, y: 540, w: 800, h: 1000 },
     note: 'tight on the flank — the front of this car has a readable plate'
+  },
+
+  /* Added Aug 2026. The gallery was two cars, both low sedans, and most of the
+     work around here is utes — so these are 4WDs. All three masters were shot
+     in flat overcast daylight with houses, powerlines and a neighbour's car in
+     the top third and driveway in the bottom third; every crop below throws
+     both away and keeps only metal. No plates appear in any of them. */
+  {
+    file: '06-dmax.jpg', out: 'work-dmax.jpg', width: 800,
+    // Snorkel, guard, bullbar and front wheel. Top edge sits under the roof
+    // rack to lose the houses and powerlines; bottom stops above the driveway.
+    rect: { x: 480, y: 826, w: 1106, h: 1382 },
+    note: 'black D-MAX — snorkel, guard and wheel'
+  },
+  {
+    file: '06-dmax.jpg', out: 'work-dmax-door.jpg', width: 800,
+    // The flank, where the grass and sky are mirrored in the wet door.
+    rect: { x: 192, y: 1056, w: 768, h: 960 },
+    note: 'the same ute — reflection across the door'
+  },
+  {
+    file: '07-blue-ute.jpg', out: 'work-blueute.jpg', width: 800,
+    // The alloy is the subject. Kept to the right of x=1500 so the stained
+    // carport floor on the left stays out of it.
+    rect: { x: 1500, y: 2000, w: 1400, h: 1750 },
+    note: 'blue ute — flare, tyre and alloy'
+  },
+  {
+    file: '08-blue-panel.jpg', out: 'work-bluepanel.jpg', width: 800,
+    // The door, where the finish actually shows. Starts at y=900 because the
+    // neighbour's house sits in the top right corner above it.
+    rect: { x: 600, y: 900, w: 1400, h: 1750 },
+    note: 'wet blue door — the reflection is the point'
   }
 ];
 
