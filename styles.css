@@ -1055,3 +1055,42 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
    layout sideways on a phone. Caps everything; the few images with their own
    max-width (the hero logo) keep it, since a class beats a bare element. */
 img, svg, video { max-width: 100%; height: auto; }
+
+/* ---- who you're dealing with ----
+   Moved out of the reviews and up to its own section, third thing on the page.
+   It carries the light treatment now, so the one bright moment lands early
+   where it introduces a person rather than late where it decorated quotes. */
+#about { padding: 66px 0 62px; }
+#about h2 { margin-bottom: 22px; }
+#about .whome {
+  margin: 0; background: transparent; border: 0; border-left: 0; padding: 0;
+  grid-template-columns: 240px 1fr; gap: 30px; max-width: none; align-items: center;
+}
+#about .whome img { border: 1px solid #ddd6c4; }
+#about .whome p { font-size: 16.5px; line-height: 1.65; }
+
+/* The reviews are dark again, so give them their photograph back. */
+#feedback {
+  position: relative; overflow: hidden; background-color: var(--panel-2);
+}
+#feedback::after {
+  content: ""; position: absolute; inset: -7%; z-index: 0; pointer-events: none;
+  background-image: url('/photos/bg-quotes.jpg');
+  background-size: cover; background-position: 50% 55%;
+  transform: scale(1.06);
+  animation: drift 44s ease-in-out infinite alternate;
+  will-change: transform;
+}
+#feedback::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(258deg, rgba(8,8,10,.95) 0%, rgba(8,8,10,.88) 52%, rgba(8,8,10,.8) 100%),
+    linear-gradient(to bottom, var(--ink) 0%, rgba(8,8,10,.44) 42%, var(--ink) 100%);
+}
+#feedback .wrap { position: relative; z-index: 2; }
+
+@media (max-width: 620px) {
+  #about { padding: 48px 0 46px; }
+  #about .whome { grid-template-columns: 1fr; gap: 18px; }
+  #about .whome img { max-width: 220px; }
+}
