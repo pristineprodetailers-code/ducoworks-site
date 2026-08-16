@@ -632,16 +632,27 @@ section p + ul.points, section ul.points + p { margin-top: 20px; }
   letter-spacing: .24em; text-transform: uppercase; color: var(--muted);
 }
 
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%; background: var(--panel); border: 1px solid var(--line);
   color: var(--ivory); font-family: var(--sans); font-size: 15px;
   padding: 13px 14px; transition: border-color .16s ease;
 }
-.field input:hover, .field textarea:hover { border-color: var(--bronze); }
-.field input:focus, .field textarea:focus { border-color: var(--champagne); outline: none; }
+.field input:hover, .field textarea:hover, .field select:hover { border-color: var(--bronze); }
+.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--champagne); outline: none; }
 .field textarea { resize: vertical; min-height: 110px; }
 .field ::placeholder { color: #4e4e58; }
 .field input[type="date"] { color-scheme: dark; }
+/* A native select renders as a light system dropdown on a dark form. The arrow
+   is drawn here so it matches everything else on the page. */
+.field select {
+  color-scheme: dark; appearance: none; -webkit-appearance: none;
+  padding-right: 40px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--champagne) 50%),
+                    linear-gradient(135deg, var(--champagne) 50%, transparent 50%);
+  background-position: calc(100% - 20px) 21px, calc(100% - 14px) 21px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
 .field input.invalid, .field textarea.invalid { border-color: #8a4a4a; }
 
 /* honeypot — never shown, never announced */

@@ -273,6 +273,8 @@ if (form) {
             data.vehicle,
             data.suburb,
             data.preferred_date ? 'Preferred: ' + data.preferred_date : '',
+            data.preferred_time && data.preferred_time !== 'Either'
+              ? data.preferred_time : '',
             data.notes,
             data.quote_summary
           ].filter(Boolean).join(' — ')
