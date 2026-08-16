@@ -1036,3 +1036,15 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
    nine dark sections is worth more than a fourth photo. The band behind the
    FAQ is untouched. */
 .light .wrap { position: relative; z-index: 2; }
+
+/* The operator, beside his own words. Photo first on a phone — a face at the
+   top of the block does the work before anyone reads a line of it. */
+.whome { display: grid; grid-template-columns: 200px 1fr; gap: 22px; align-items: start; }
+.whome img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid #e0d9c9; background: #f2efe8;
+}
+@media (max-width: 620px) {
+  .whome { grid-template-columns: 1fr; gap: 16px; }
+  .whome img { max-width: 200px; }
+}

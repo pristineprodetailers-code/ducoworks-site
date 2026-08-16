@@ -146,6 +146,14 @@ const PHOTOS = [
     note: 'behind the reviews — black flank and door handles'
   },
   {
+    /* The operator. Cropped to the chest so the shelves of product stay in
+       frame — they say "real workshop" better than any sentence — while the
+       ceiling, the floor clutter and the gear bags at the edges go. */
+    file: '09-tim.jpg', out: 'me.jpg', width: 700,
+    rect: { x: 629, y: 1365, w: 1744, h: 2180 }, quality: 0.84,
+    note: 'the operator, in the workshop'
+  },
+  {
     file: '08-blue-panel.jpg', out: 'bg-faq.jpg', width: 1920,
     rect: { x: 500, y: 1150, w: 2400, h: 1350 }, quality: 0.68,
     note: 'behind the questions — blue door and reflection'
