@@ -253,14 +253,29 @@ PAGES.forEach(function (p) {
   written += 1;
 });
 
-/* Sitemap covers the home page plus every generated page. */
+/* Sitemap covers the home page plus every generated page.
+
+   lastmod is read from each file rather than typed in, because a hand-written
+   date is wrong the moment anyone forgets to change it — and a sitemap that
+   claims pages changed when they did not is worse than one with no dates.
+   Local time, not toISOString(): in Queensland that returns yesterday until
+   mid-morning. */
+function lastmod(rel) {
+  const file = path.join(ROOT, rel, 'index.html');
+  let d;
+  try { d = fs.statSync(file).mtime; } catch (e) { d = new Date(); }
+  return d.getFullYear() + '-' +
+    String(d.getMonth() + 1).padStart(2, '0') + '-' +
+    String(d.getDate()).padStart(2, '0');
+}
+
 const urls = [''].concat(PAGES.map(function (p) { return p.slug + '/'; }));
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
   urls.map(function (u) {
     return '  <url>\n    <loc>' + SITE + '/' + u + '</loc>\n' +
-      '    <lastmod>2026-08-12</lastmod>\n' +
+      '    <lastmod>' + lastmod(u) + '</lastmod>\n' +
       '    <changefreq>monthly</changefreq>\n' +
       '    <priority>' + (u === '' ? '1.0' : '0.8') + '</priority>\n  </url>';
   }).join('\n') +
