@@ -1048,3 +1048,10 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   .whome { grid-template-columns: 1fr; gap: 16px; }
   .whome img { max-width: 200px; }
 }
+
+/* An image must never be able to push the page wider than the screen. Without
+   this, any <img> that arrives before its own styling do — a stale cache, a new
+   photo, a typo in a class name — renders at natural size and drags the whole
+   layout sideways on a phone. Caps everything; the few images with their own
+   max-width (the hero logo) keep it, since a class beats a bare element. */
+img, svg, video { max-width: 100%; height: auto; }
