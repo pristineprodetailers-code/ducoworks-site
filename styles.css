@@ -1035,3 +1035,11 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   .pull { padding: 46px 0 42px; }
   .whome { padding: 18px 18px; }
 }
+
+/* The photographic band added earlier sits on ::before and ::after, which paint
+   over a light background and left the heading dark-on-dark. A section can be
+   photographic or light, not both — light wins here, because the relief from
+   nine dark sections is worth more than a fourth photo. The band behind the
+   FAQ is untouched. */
+.light::before, .light::after { display: none !important; }
+.light .wrap { position: relative; z-index: 2; }
