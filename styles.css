@@ -981,3 +981,57 @@ details p { padding: 0 0 22px; font-size: 15px; max-width: 62ch; }
   #feedback::after, #faq::after, #standard::after { animation: none; transform: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ==========================================================================
+   Warmth                                            added Aug 2026
+
+   Nine sections of near-black read as relentless rather than restrained. One
+   light section in the middle is what makes the dark ones look chosen. It sits
+   on the reviews, so the warmest content lands in the warmest place.
+   ------------------------------------------------------------------------ */
+
+/* ---- the pull quote, straight after the hero ---- */
+.pull { padding: 62px 0 58px; border-bottom: 1px solid var(--line); }
+.pull figure { margin: 0; text-align: center; }
+.pull blockquote { margin: 0; }
+.pull blockquote p {
+  font-size: clamp(22px, 3.4vw, 34px); line-height: 1.35; font-weight: 300;
+  color: var(--ivory); letter-spacing: -.4px; text-wrap: balance;
+}
+.pull blockquote em { font-style: normal; color: var(--champagne); }
+.pull figcaption {
+  margin-top: 18px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--muted);
+}
+.pull figcaption span { color: var(--bronze); }
+
+/* ---- the one light section ---- */
+.light { background: var(--ivory); color: #1a1a1f; position: relative; }
+.light .num { color: #9a7a3a; }
+.light h2 { color: #12121a; }
+.light .intro { color: #43434e; }
+.light .quote {
+  background: #fffdf8; border-color: #e0d9c9;
+}
+.light .quote blockquote p { color: #2a2a33; }
+.light .quote figcaption { color: #6a6a76; }
+.light .quote figcaption span { color: #9a7a3a; }
+/* The opening mark is a decoration, and on ivory it needs to be much lighter
+   than it is on black or it shouts. */
+.light .quote::before { color: #cfc4ad; opacity: 1; }
+
+/* ---- who turns up ---- */
+.whome {
+  margin: 6px 0 30px; padding: 22px 24px;
+  background: #fffdf8; border: 1px solid #e0d9c9;
+  border-left: 3px solid var(--bronze);
+  max-width: 62ch;
+}
+.whome p { color: #3a3a45; font-size: 15.5px; }
+.whome p + p { margin-top: 12px; }
+.whome b { color: #12121a; }
+
+@media (max-width: 760px) {
+  .pull { padding: 46px 0 42px; }
+  .whome { padding: 18px 18px; }
+}
