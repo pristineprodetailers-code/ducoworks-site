@@ -150,3 +150,32 @@ FLYERS.forEach(function (f) {
   shoot(page(f, 1080, 1080), path.join(OUT, f.name + '-sq.png'), 1080, 1080);
 });
 console.log('Done — ' + (FLYERS.length * 2) + ' files in /flyers/');
+
+/* ---- web copies ---------------------------------------------------------
+   PNGs are 1-2 MB each, which is slow to pull down on mobile data. These JPEG
+   copies are what /flyers/ serves so Tim can save them to his phone. */
+function toJpeg(pngPath, jpgPath, W, H) {
+  const html = '<!doctype html><meta charset="utf-8"><div id="out"></div>' +
+    '<script>var i=new Image();i.onload=function(){' +
+    'var c=document.createElement("canvas");c.width=' + W + ';c.height=' + H + ';' +
+    'var g=c.getContext("2d");g.drawImage(i,0,0,' + W + ',' + H + ');' +
+    'document.getElementById("out").textContent=c.toDataURL("image/jpeg",0.92);};' +
+    'i.src="' + url(pngPath) + '";<\/script>';
+  fs.writeFileSync(TMP, html);
+  const dom = execFileSync(CHROME, [
+    '--headless', '--disable-gpu', '--allow-file-access-from-files',
+    '--virtual-time-budget=20000', '--dump-dom', url(TMP)
+  ], { encoding: 'utf8', maxBuffer: 96 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] });
+  fs.unlinkSync(TMP);
+  const m = dom.match(/data:image\/jpeg;base64,([A-Za-z0-9+/=]+)/);
+  if (!m) { console.log('  FAILED jpeg for ' + path.basename(pngPath)); return; }
+  fs.writeFileSync(jpgPath, Buffer.from(m[1], 'base64'));
+  console.log('  ' + path.basename(jpgPath).padEnd(22) +
+    (fs.statSync(jpgPath).size / 1024).toFixed(0) + ' kB');
+}
+
+console.log('Making web copies…');
+FLYERS.forEach(function (f) {
+  toJpeg(path.join(OUT, f.name + '-ig.png'), path.join(OUT, f.name + '-ig.jpg'), 1080, 1350);
+  toJpeg(path.join(OUT, f.name + '-sq.png'), path.join(OUT, f.name + '-sq.jpg'), 1080, 1080);
+});

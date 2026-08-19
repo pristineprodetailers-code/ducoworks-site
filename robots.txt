@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Internal assets — reachable by link, kept out of search results.
+Disallow: /flyers/
+
 Sitemap: https://ducoworks.com/sitemap.xml

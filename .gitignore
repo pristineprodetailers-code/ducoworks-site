@@ -20,5 +20,6 @@ _shot.html
 # Flyer photo masters stay local (full res, plates visible)
 tools/source/flyer/
 
-# Social flyers are deliverables, not website files — no reason to publish them
-flyers/
+# The big PNG masters stay local; the JPEG copies are published so they can be
+# saved on a phone.
+flyers/*.png
