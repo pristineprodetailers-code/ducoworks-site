@@ -46,32 +46,32 @@ const PHOTOS = {
 
 const FLYERS = [
   {
-    name: '1-launch', photo: 'porsche',
+    name: '1-launch', photo: 'porsche', flag: 'Save $50',
     kicker: 'Launch offer &middot; Cairns to Tully',
     headline: '$50 off<br>your first<br>detail',
-    sub: 'Mobile detailing at your place. Book online in four questions and see the price before you commit.',
-    strip: 'From $190 &middot; ducoworks.com'
+    sub: 'Mobile detailing at your place, seven days. Four questions online and you have the price — no callback, no haggling.',
+    cta: 'Book at ducoworks.com', foot: 'From $190 &middot; 0401 881 802'
   },
   {
-    name: '2-ceramic', photo: 'reflection',
-    kicker: 'Ceramic coating &middot; Innisfail workshop',
-    headline: 'Free glass<br>coating',
-    sub: 'A $180 extra, included with every five-year ceramic. Corrected first, then coated — so the finish holds for years, not weeks.',
-    strip: 'Ceramic from $1,290 &middot; ducoworks.com'
+    name: '2-ceramic', photo: 'reflection', flag: 'Free',
+    kicker: 'Five-year ceramic &middot; Innisfail workshop',
+    headline: 'Free interior<br>detail with<br>every ceramic',
+    sub: 'Paint corrected, then coated for five years. Drop it off and the inside gets done too — at no extra cost.',
+    cta: 'Ceramic from $1,290', foot: 'ducoworks.com &middot; 0401 881 802'
   },
   {
     name: '3-mobile', photo: 'dualcab',
     kicker: 'Mobile &middot; seven days',
     headline: 'We come<br>to you',
-    sub: 'Cairns, Innisfail, Mission Beach, Tully. Your driveway, your workplace — you keep your day.',
-    strip: 'Instant price online &middot; 0401 881 802'
+    sub: 'Cairns, Innisfail, Mission Beach, Tully. Your driveway or your workplace, so you keep your day.',
+    cta: 'Get your price online', foot: 'ducoworks.com &middot; 0401 881 802'
   },
   {
-    name: '4-finish', photo: 'commodore',
-    kicker: 'Over 100 cars this year',
+    name: '4-finish', photo: 'commodore', flag: '100+ cars',
+    kicker: 'Innisfail &middot; Cassowary Coast',
     headline: 'Not just<br>clean.<br>Finished.',
-    sub: 'One operator, one standard, every car. Precision. Finish. Preserve.',
-    strip: 'ducoworks.com &middot; 0401 881 802'
+    sub: 'One operator, one standard, every car. Over a hundred of them this year.',
+    cta: 'See the work', foot: 'ducoworks.com &middot; 0401 881 802'
   }
 ];
 
@@ -80,6 +80,8 @@ function page(f, W, H) {
   const r = p.rect;
   // Scale the master so the chosen rectangle exactly fills the canvas.
   const scale = Math.max(W / r.w, H / r.h);
+  const lines = f.headline.split('<br>').length;
+  const pad = Math.round(W * .085);
   return `<!doctype html><meta charset="utf-8">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -99,32 +101,53 @@ function page(f, W, H) {
           rgba(8,8,10,${p.night ? '.22' : '.4'}) 64%,
           rgba(8,8,10,${p.night ? '.1' : '.3'}) 100%),
         linear-gradient(100deg, rgba(8,8,10,${p.night ? '.4' : '.55'}) 0%, transparent 58%)}
-  .inner{position:absolute;inset:0;padding:${Math.round(W * .085)}px;
+
+  .inner{position:absolute;inset:0;padding:${pad}px;
          display:flex;flex-direction:column;justify-content:space-between}
+  .top{display:flex;align-items:flex-start;justify-content:space-between}
   .mark{width:${Math.round(W * .105)}px;height:auto;display:block}
+
+  /* The deal has to read in the half second someone spends scrolling past. */
+  .flag{border:1px solid #c9a961;color:#c9a961;
+        font-family:Consolas,monospace;font-size:${Math.round(W * .021)}px;
+        letter-spacing:.24em;text-transform:uppercase;
+        padding:${Math.round(W * .015)}px ${Math.round(W * .026)}px}
+
   .kicker{font-family:Consolas,monospace;font-size:${Math.round(W * .0195)}px;
-          letter-spacing:.3em;text-transform:uppercase;color:#c9a961;margin-bottom:${Math.round(W * .028)}px}
-  h1{font-size:${Math.round(W * (f.headline.split('<br>').length > 2 ? .107 : .125))}px;
+          letter-spacing:.3em;text-transform:uppercase;color:#c9a961;
+          text-shadow:0 2px 14px rgba(8,8,10,.9);
+          margin-bottom:${Math.round(W * .026)}px}
+  h1{font-size:${Math.round(W * (lines > 2 ? .094 : .125))}px;
      font-weight:200;letter-spacing:.02em;line-height:1.02;text-transform:uppercase}
-  .rule{width:${Math.round(W * .075)}px;height:1px;background:#c9a961;margin:${Math.round(W * .034)}px 0}
-  .sub{font-size:${Math.round(W * .0265)}px;font-weight:300;line-height:1.5;color:#ded9cf;
-       max-width:${Math.round(W * .72)}px}
-  .strip{margin-top:${Math.round(W * .045)}px;padding-top:${Math.round(W * .028)}px;
-         border-top:1px solid rgba(201,169,97,.35);
-         font-family:Consolas,monospace;font-size:${Math.round(W * .0215)}px;
-         letter-spacing:.22em;text-transform:uppercase;color:#f2efe8}
+  .rule{width:${Math.round(W * .075)}px;height:1px;background:#c9a961;
+        margin:${Math.round(W * .03)}px 0}
+  .sub{font-size:${Math.round(W * .0255)}px;font-weight:300;line-height:1.5;color:#ded9cf;
+       max-width:${Math.round(W * .74)}px}
+
+  /* A solid bar reads as a button. A line of text reads as small print. */
+  .cta{margin-top:${Math.round(W * .04)}px;background:#c9a961;color:#08080a;
+       font-family:Consolas,monospace;font-weight:700;
+       font-size:${Math.round(W * .0245)}px;letter-spacing:.2em;text-transform:uppercase;
+       padding:${Math.round(W * .026)}px ${Math.round(W * .03)}px;display:inline-block}
+  .foot{margin-top:${Math.round(W * .022)}px;
+        font-family:Consolas,monospace;font-size:${Math.round(W * .0195)}px;
+        letter-spacing:.2em;text-transform:uppercase;color:#a9a49a}
 </style>
 <div class="card">
   <img class="shot" src="${url(path.join(SRC, p.file))}">
   <div class="veil"></div>
   <div class="inner">
-    <img class="mark" src="${url(path.join(ROOT, 'mark.png'))}">
+    <div class="top">
+      <img class="mark" src="${url(path.join(ROOT, 'mark.png'))}">
+      ${f.flag ? `<span class="flag">${f.flag}</span>` : ''}
+    </div>
     <div>
       <p class="kicker">${f.kicker}</p>
       <h1>${f.headline}</h1>
       <div class="rule"></div>
       <p class="sub">${f.sub}</p>
-      <p class="strip">${f.strip}</p>
+      <div><span class="cta">${f.cta}</span></div>
+      <p class="foot">${f.foot}</p>
     </div>
   </div>
 </div>`;
