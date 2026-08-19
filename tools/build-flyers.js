@@ -41,7 +41,9 @@ const PHOTOS = {
   porsche:    { file: 'porsche-foam.jpg', rect: { x: 700, y: 950, w: 2000, h: 2500 }, night: true },
   reflection: { file: 'reflection.jpg',   rect: { x: 300, y: 500, w: 2400, h: 3000 } },
   dualcab:    { file: 'dualcab.jpg',      rect: { x: 0,   y: 830, w: 1728, h: 2160 } },
-  commodore:  { file: 'commodore.jpg',    rect: { x: 300, y: 400, w: 2400, h: 3000 } }
+  commodore:  { file: 'commodore.jpg',    rect: { x: 300, y: 400, w: 2400, h: 3000 } },
+  mirage:     { file: 'mirage.jpg',       rect: { x: 300, y: 500, w: 2400, h: 3000 } },
+  blue4wd:    { file: 'blue4wd.jpg',      rect: { x: 300, y: 500, w: 2400, h: 3000 } }
 };
 
 const FLYERS = [
@@ -65,6 +67,41 @@ const FLYERS = [
     headline: 'We come<br>to you',
     sub: 'Cairns, Innisfail, Mission Beach, Tully. Your driveway or your workplace, so you keep your day.',
     cta: 'Get your price online', foot: 'ducoworks.com &middot; 0401 881 802'
+  },
+  {
+    name: '5-second-car', photo: 'mirage', flag: 'Save $40',
+    kicker: 'Same address &middot; same day',
+    headline: 'Second car,<br>$40 off',
+    sub: 'Doing yours? Do the partner&rsquo;s, the work ute, the neighbour&rsquo;s. The van is already there, so the second car costs you less.',
+    cta: 'Book both at ducoworks.com', foot: 'Cairns to Tully &middot; 0401 881 802'
+  },
+  {
+    name: '6-plan', photo: 'blue4wd', flag: '4 for 3',
+    kicker: 'Maintenance plan &middot; from $570 a year',
+    headline: 'Four details.<br>Pay for<br>three.',
+    sub: 'Quarterly detailing, booked in for the year. The car never gets away from you, and the fourth one is on me.',
+    cta: 'Ask about the plan', foot: 'ducoworks.com &middot; 0401 881 802'
+  },
+  {
+    name: '7-midweek', photo: 'dualcab', flag: 'Save $30',
+    kicker: 'Tuesday to Thursday',
+    headline: '$30 off<br>midweek',
+    sub: 'Weekends book out early. Midweek does not — so if you can leave it on a weekday, it costs you less.',
+    cta: 'Book midweek online', foot: 'ducoworks.com &middot; 0401 881 802'
+  },
+  {
+    name: '8-referral', photo: 'commodore', flag: '$25 each',
+    kicker: 'Referral &middot; Cairns to Tully',
+    headline: 'Send a mate.<br>You both<br>save $25.',
+    sub: 'They get $25 off their first detail. You get $25 off your next. All they have to do is mention your name.',
+    cta: 'ducoworks.com', foot: 'Mobile seven days &middot; 0401 881 802'
+  },
+  {
+    name: '9-wet', photo: 'porsche', flag: 'Before the wet',
+    kicker: 'Sealed inside and out',
+    headline: 'Beat the<br>wet season',
+    sub: 'Months of damp is what turns an interior musty and takes the life out of paint. Far easier to seal it before than to fix it after.',
+    cta: 'Get protected', foot: 'From $190 &middot; ducoworks.com'
   },
   {
     name: '4-finish', photo: 'commodore', flag: '100+ cars',
@@ -202,3 +239,77 @@ FLYERS.forEach(function (f) {
   toJpeg(path.join(OUT, f.name + '-ig.png'), path.join(OUT, f.name + '-ig.jpg'), 1080, 1350);
   toJpeg(path.join(OUT, f.name + '-sq.png'), path.join(OUT, f.name + '-sq.jpg'), 1080, 1080);
 });
+
+/* ---- download page ------------------------------------------------------
+   Generated from FLYERS so it can never fall out of step with what exists. */
+const TITLES = {
+  '1-launch': '$50 off first detail', '2-ceramic': 'Free interior with ceramic',
+  '3-mobile': 'We come to you',       '4-finish': 'Not just clean',
+  '5-second-car': 'Second car $40 off', '6-plan': 'Four for three',
+  '7-midweek': '$30 off midweek',     '8-referral': 'Refer a mate',
+  '9-wet': 'Beat the wet season'
+};
+
+function tile(f, size, label, dims) {
+  const t = TITLES[f.name] || f.name;
+  return `        <figure><img src="/flyers/${f.name}-${size}.jpg" alt="${t}, ${label}" loading="lazy">
+          <figcaption>${t} &middot; ${label} ${dims}</figcaption>
+          <a href="/flyers/${f.name}-${size}.jpg">Open full size</a></figure>`;
+}
+
+const order = FLYERS.slice().sort((a, b) => a.name.localeCompare(b.name));
+const indexHtml = `<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DucoWorks — Social Flyers</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .grab{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .grab figure{margin:0;background:var(--panel);border:1px solid var(--line);padding:13px}
+  .grab img{display:block;width:100%;height:auto;border:1px solid var(--line-soft)}
+  .grab figcaption{margin-top:11px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+  .grab a{display:inline-block;margin-top:7px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.16em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="/" aria-label="DucoWorks home">
+    <img class="brand-mark" src="/mark.png" alt="" width="256" height="256">
+    <img class="brand-word" src="/wordmark.png" alt="DucoWorks" width="600" height="55">
+  </a>
+</header>
+
+<main id="main">
+  <section>
+    <div class="wrap">
+      <p class="num">Internal</p>
+      <h2>Social Flyers</h2>
+      <p class="intro">On a phone: press and hold an image, then <b>Save to Photos</b>.
+        Tall ones are Instagram feed, square ones are Facebook.
+        ${FLYERS.length} flyers, ${FLYERS.length * 2} files.</p>
+
+      <h3 style="margin-bottom:18px">Instagram &mdash; 1080&times;1350</h3>
+      <div class="grab">
+${order.map((f) => tile(f, 'ig', 'Instagram', '1080&times;1350')).join('\n')}
+      </div>
+
+      <h3 style="margin:52px 0 18px">Facebook &mdash; 1080&times;1080</h3>
+      <div class="grab">
+${order.map((f) => tile(f, 'sq', 'Facebook', '1080&times;1080')).join('\n')}
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
+`;
+fs.writeFileSync(path.join(OUT, 'index.html'), indexHtml);
+console.log('  index.html            ' + FLYERS.length + ' flyers listed');
