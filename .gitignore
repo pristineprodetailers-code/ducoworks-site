@@ -16,3 +16,9 @@ tools/source/photos/
 
 # Local screenshot harness, never published
 _shot.html
+
+# Flyer photo masters stay local (full res, plates visible)
+tools/source/flyer/
+
+# Social flyers are deliverables, not website files — no reason to publish them
+flyers/
