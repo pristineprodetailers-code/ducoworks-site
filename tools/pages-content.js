@@ -492,12 +492,12 @@ module.exports = function (h) {
   /* ------------------------------------------------------------------ TULLY */
   {
     slug: 'tully',
-    crumb: 'Tully & Mission Beach',
+    crumb: 'Tully',
     image: 'work-feature.jpg',
     placename: 'Tully, Queensland',
-    title: 'Car Detailing Tully & Mission Beach | Mobile | DucoWorks',
-    ogTitle: 'Car Detailing Tully & Mission Beach | DucoWorks',
-    description: 'Mobile car detailing in Tully, Mission Beach, El Arish and Silkwood. Detailing, paint correction and ceramic coating at your door. Travel $25.',
+    title: 'Car Detailing Tully | Mobile Detailing | DucoWorks',
+    ogTitle: 'Car Detailing Tully | DucoWorks',
+    description: 'Mobile car detailing in Tully, Tully Heads, El Arish and Silkwood. Detailing, paint correction and ceramic coating at your door. Travel $25.',
     h1: 'Car Detailing<br>in Tully',
     strap: 'The southern run — Silkwood, El Arish, Mission Beach, Wongaling and Tully. Travel is a flat $25.',
     schema: service('Mobile Car Detailing in Tully',
@@ -540,17 +540,355 @@ module.exports = function (h) {
 
     faq: [
       { q: 'Do you come to Mission Beach?',
-        a: 'Yes. Mission Beach and Wongaling Beach are on the southern run, along with Tully, Tully Heads, El Arish and Silkwood.' },
+        a: 'Yes \u2014 Mission Beach and Wongaling Beach are on the same southern run. There is a <a href="/mission-beach/">Mission Beach page</a> with the detail.' },
       { q: 'What is the travel charge?',
         a: 'A flat $25 for the southern run, shown in the quote before you book.' },
       { q: 'Do you go as far as Cardwell?',
-        a: 'On request. If the job is worth the drive, the drive happens — call and ask.' },
+        a: 'On request — see the <a href="/cardwell/">Cardwell page</a>. If the job is worth the drive, the drive happens.' },
       { q: 'Can anything be done about a musty interior?',
         a: 'Seat and carpet extraction is the answer for most of it, because the smell is held in the fabric rather than floating in the air.' },
       { q: 'Is a coating worth it with this much rain?',
         a: 'Arguably more so. Water that sheets off a coated panel takes far less with it when it dries, which is what causes spotting in the first place.' }
     ]
-  }
+  },
 
+  /* -------------------------------------------------------- MISSION BEACH */
+  /* Split out of the Tully page, which was targeting both towns in one title
+     and winning neither cleanly. Tully has been retargeted to Tully. Travel is
+     the southern-run $25 from script.js — same zone, same fee. */
+  {
+    slug: 'mission-beach',
+    crumb: 'Mission Beach',
+    image: 'work-dmax.jpg',
+    placename: 'Mission Beach, Queensland',
+    title: 'Car Detailing Mission Beach | Mobile | DucoWorks',
+    ogTitle: 'Car Detailing Mission Beach | DucoWorks',
+    description: 'Mobile car detailing at Mission Beach, Wongaling Beach and Bingil Bay. Detailing, paint correction and ceramic coating at your door. Travel $25.',
+    h1: 'Car Detailing<br>at Mission Beach',
+    strap: 'Mission Beach, Wongaling, South Mission and Bingil Bay. The work happens in your driveway, and travel is a flat $25.',
+    schema: service('Mobile Car Detailing at Mission Beach',
+      'Mobile car detailing, paint correction and ceramic coating at Mission Beach, Wongaling Beach, South Mission Beach and Bingil Bay.'),
+    faqNum: '04',
+    closerEyebrow: 'Mission Beach &middot; travel $25',
+    closerLine: 'Book the driveway.',
+    closerBody: 'Mission Beach, Wongaling Beach, South Mission Beach, Bingil Bay and Garners Beach, on the southern run from Innisfail.',
+    body:
+      block('01', 'We come to the beach',
+        'One operator, one car at a time, at your address.',
+        `<p>Mission Beach sits on the southern run out of Innisfail, along with Wongaling
+        Beach, South Mission Beach, Bingil Bay and Garners Beach. Travel is a flat $25 on top
+        of the job and appears in the price before you book, not on the invoice afterwards.</p>
+        <p>There is no shop to drive to and no queue to sit in. The van turns up where the car
+        already is, which for most people here means the driveway or the carport. All that is
+        needed is somewhere the car can sit safely for the day, a power point and a tap.</p>`) +
+
+      block('02', 'Salt is the whole problem here',
+        'Closer to open water than anywhere else on the run, and paint knows it.',
+        `<p>Onshore wind carries salt off the water every day of the year, and it settles on
+        whatever is parked in it. It does not need a wave to reach your car. Paint left bare
+        in that air goes flat far faster than the same car would three streets inland, and
+        chrome, badges and wheel faces show it before the panels do.</p>
+        <p>Interiors take a different beating. Sand travels in on feet and towels and works
+        its way into carpet backing, and salt water plus sunscreen on seats is a combination
+        that sets rather than wipes off. Seat and carpet extraction is the fix for most of
+        that, and it is an add-on rather than standard because it is genuinely slow work.</p>
+        <p>Sealed and coated paint sheds salt-laden water instead of holding it, which is the
+        entire argument for <a href="/ceramic-coating/">a coating</a> this close to the
+        beach, and why <a href="/paint-correction/">correction</a> comes first.</p>`, true) +
+
+      block('03', 'What it costs at Mission Beach',
+        'Published, not quoted on the phone.',
+        `<ul class="points">
+          <li><b>Maintenance Detail</b> &mdash; from $190. For a car that is already looked after and needs to stay that way.</li>
+          <li><b>Full Detail</b> &mdash; from $385. The reset, inside and out.</li>
+          <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290. Corrected, then coated for years.</li>
+          <li><b>Travel to the southern run</b> &mdash; $25, included in the figure the quote tool gives you.</li>
+        </ul>
+        <p class="foot-note">Prices are for a small car. Larger vehicles and neglected
+        condition are priced in the <a href="/#quote">quote tool</a> before you book. Holiday
+        lets and rental fleets quoted on inspection.</p>`),
+
+    faq: [
+      { q: 'Do you actually come to Mission Beach?',
+        a: 'Yes. Mission Beach, Wongaling Beach, South Mission Beach, Bingil Bay and Garners Beach are all on the southern run, along with Tully, El Arish and Silkwood.' },
+      { q: 'What is the travel charge?',
+        a: 'A flat $25 for the southern run, shown in the quote before you book rather than added afterwards.' },
+      { q: 'Can you do a holiday rental between guests?',
+        a: 'Yes, and it is quoted on inspection rather than off the standard list, because turnaround cars vary far more than a private car does.' },
+      { q: 'Is a coating worth it this close to the water?',
+        a: 'Arguably more so than anywhere else on the coast. Salt water that sheets off a coated panel leaves far less behind when it dries, and that residue is what dulls paint here.' },
+      { q: 'Can you get sand out of the carpet properly?',
+        a: 'Seat and carpet extraction is the answer, because sand sits in the backing rather than on the surface where a vacuum can reach it.' }
+    ]
+  },
+
+  /* --------------------------------------------------------------- BABINDA */
+  {
+    slug: 'babinda',
+    crumb: 'Babinda',
+    image: 'work-blueute.jpg',
+    placename: 'Babinda, Queensland',
+    title: 'Car Detailing Babinda | Mobile Detailing | DucoWorks',
+    ogTitle: 'Car Detailing Babinda | DucoWorks',
+    description: 'Mobile car detailing in Babinda, Mirriwinni and Bramston Beach. Detailing, paint correction and ceramic coating at your door. Travel $35.',
+    h1: 'Car Detailing<br>in Babinda',
+    strap: 'On the northern run between Innisfail and Cairns. Babinda, Mirriwinni, Bramston Beach. Travel is a flat $35.',
+    schema: service('Mobile Car Detailing in Babinda',
+      'Mobile car detailing, paint correction and ceramic coating in Babinda, Mirriwinni and Bramston Beach.'),
+    faqNum: '04',
+    closerEyebrow: 'Babinda &middot; travel $35',
+    closerLine: 'Book the driveway.',
+    closerBody: 'Babinda, Mirriwinni, Bramston Beach and the highway between, on the northern run out of Innisfail.',
+    body:
+      block('01', 'On the northern run',
+        'Half an hour up the highway, regularly.',
+        `<p>Babinda sits on the northern run between Innisfail and Cairns, along with
+        Mirriwinni and Bramston Beach. Travel is a flat $35 on top of the job, shown in the
+        quote before you commit.</p>
+        <p>A Babinda booking gets the same day and the same standard as one in Cairns. Small
+        town does not mean a quicker job here &mdash; one vehicle at a time, finished when the
+        finish is right rather than when the next booking arrives.</p>`) +
+
+      block('02', 'Golden Gumboot country',
+        'Babinda and Tully have spent decades arguing over which of them is wetter. Your paint loses either way.',
+        `<p>Sitting under Bellenden Ker, Babinda catches some of the heaviest rainfall recorded
+        anywhere in the country. People assume constant rain keeps a car clean. It does the
+        opposite: rainwater collects whatever is in the air on the way down and leaves it on
+        the panel when it dries, and that is exactly where water spotting and etching start.</p>
+        <p>Then there is what grows. Cars parked under rainforest canopy pick up sap and
+        droppings that bake on within a day, and months of unbroken humidity is what puts a
+        musty smell through carpet and a grey bloom on vinyl and leather. Both are far easier
+        to prevent than to reverse.</p>
+        <p>Surfaces that shed water instead of holding it are the answer, which is what
+        <a href="/ceramic-coating/">a coating</a> does, and why
+        <a href="/paint-correction/">correction</a> goes on first.</p>`, true) +
+
+      block('03', 'What it costs in Babinda',
+        'Same work, same standard, $35 of highway.',
+        `<ul class="points">
+          <li><b>Maintenance Detail</b> &mdash; from $190.</li>
+          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
+          <li><b>Travel to the northern run</b> &mdash; $35.</li>
+        </ul>
+        <p class="foot-note">Prices are for a small car. Larger vehicles and neglected
+        condition are priced in the <a href="/#quote">quote tool</a> before the work starts,
+        not after.</p>`),
+
+    faq: [
+      { q: 'Do you come out to Babinda?',
+        a: 'Yes. Babinda, Mirriwinni and Bramston Beach are on the northern run, and travel is a flat $35 shown in the quote before you book.' },
+      { q: 'Is it cheaper than the Cairns run?',
+        a: 'Yes. Babinda sits in the $35 zone rather than the $55 Cairns zone, because it is a shorter drive from Innisfail.' },
+      { q: 'Can anything be done about a musty interior?',
+        a: 'Seat and carpet extraction handles most of it, because the smell is held in the fabric rather than floating in the air.' },
+      { q: 'How often should I have one up here?',
+        a: 'Once a year for most cars, with maintenance details in between. The tropics are harder on a car than most people allow for.' },
+      { q: 'What if it rains on the day?',
+        a: 'This is Far North Queensland, so wet days are planned around. Undercover space at your place is ideal. If there is none, you can bring the car to the workshop at 61 Ryan Street, Innisfail instead.' }
+    ]
+  },
+
+  /* ------------------------------------------------------------ GORDONVALE */
+  {
+    slug: 'gordonvale',
+    crumb: 'Gordonvale',
+    image: 'work-dmax-door.jpg',
+    placename: 'Gordonvale, Queensland',
+    title: 'Car Detailing Gordonvale | Mobile | DucoWorks',
+    ogTitle: 'Car Detailing Gordonvale | DucoWorks',
+    description: 'Mobile car detailing in Gordonvale, Aloomba and the Mulgrave valley. Detailing, paint correction and ceramic coating at your door. Travel $35.',
+    h1: 'Car Detailing<br>in Gordonvale',
+    strap: 'Under the Pyramid, on the northern run. Gordonvale, Aloomba and the Mulgrave valley. Travel is a flat $35.',
+    schema: service('Mobile Car Detailing in Gordonvale',
+      'Mobile car detailing, paint correction and ceramic coating in Gordonvale, Aloomba and the Mulgrave valley.'),
+    faqNum: '04',
+    closerEyebrow: 'Gordonvale &middot; travel $35',
+    closerLine: 'Book the driveway.',
+    closerBody: 'Gordonvale, Aloomba, Little Mulgrave and the highway either side, on the northern run out of Innisfail.',
+    body:
+      block('01', 'On the northern run',
+        'Up the highway past Babinda, at your place rather than a shop in Cairns.',
+        `<p>Gordonvale is on the northern run, along with Aloomba, Little Mulgrave and Edmonton
+        further on. Travel is a flat $35 on top of the job and appears in the quote before you
+        book.</p>
+        <p>The pull for most people here is not driving into Cairns and leaving the car with
+        someone for the day. It stays in your driveway, and one vehicle gets the whole day
+        rather than a slot between two others.</p>`) +
+
+      block('02', 'Cane town with a city commute',
+        'Two things work on a Gordonvale car, and they come from opposite directions.',
+        `<p>Harvest is the first. From the middle of the year the mill runs, the haul-outs run
+        with it, and everything downwind picks up a fine grit that is not just dust &mdash; it
+        settles into a film that a hose does not shift and a sponge drags straight across the
+        clear coat. That is where most of the fine scratching on a cane-town car comes from.</p>
+        <p>The commute is the second. Highway kilometres put bugs and tar on the front of the
+        car in a way town driving never does, and both etch if they sit through a few hot
+        days. A bug-covered bar and a hazy bonnet are the same job.</p>
+        <p>Protected paint releases all of it far more easily, which is the practical case for
+        <a href="/ceramic-coating/">a coating</a> once the paint has been
+        <a href="/paint-correction/">corrected</a> underneath.</p>`, true) +
+
+      block('03', 'What it costs in Gordonvale',
+        'Published, not quoted on the phone.',
+        `<ul class="points">
+          <li><b>Maintenance Detail</b> &mdash; from $190.</li>
+          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
+          <li><b>Travel to the northern run</b> &mdash; $35.</li>
+        </ul>
+        <p class="foot-note">Prices are for a small car. Larger vehicles and neglected
+        condition are priced in the <a href="/#quote">quote tool</a> before you book.</p>`),
+
+    faq: [
+      { q: 'Do you cover Gordonvale?',
+        a: 'Yes. Gordonvale, Aloomba and Little Mulgrave are on the northern run, at a flat $35 travel.' },
+      { q: 'Why is it $35 and not the Cairns $55?',
+        a: 'Because it is a shorter drive from Innisfail. The zone you pick in the quote tool sets the travel figure, and Gordonvale sits in the Babinda to Edmonton zone.' },
+      { q: 'Can you come to my workplace instead of home?',
+        a: 'Yes, as long as the car can be parked safely for the day and there is a power point and a tap you can use.' },
+      { q: 'Will it help with cane dust and mill fallout?',
+        a: 'It is one of the more satisfying jobs up here. The important part is that it comes off with the right process rather than being ground in by wiping at it.' },
+      { q: 'How far ahead do I need to book?',
+        a: 'The calendar fills in advance, so the earlier the better. A deposit holds the day on any booking.' }
+    ]
+  },
+
+  /* -------------------------------------------------------------- EDMONTON */
+  {
+    slug: 'edmonton',
+    crumb: 'Edmonton',
+    image: 'work-guard.jpg',
+    placename: 'Edmonton, Queensland',
+    title: 'Car Detailing Edmonton Cairns | Mobile | DucoWorks',
+    ogTitle: 'Car Detailing Edmonton | DucoWorks',
+    description: 'Mobile car detailing in Edmonton, Bentley Park and Mount Sheridan. Detailing, paint correction and ceramic coating at your door. Travel $35.',
+    h1: 'Car Detailing<br>in Edmonton',
+    strap: 'The top of the northern run, south of Cairns. Edmonton, Bentley Park, Mount Sheridan. Travel is a flat $35.',
+    schema: service('Mobile Car Detailing in Edmonton',
+      'Mobile car detailing, paint correction and ceramic coating in Edmonton, Bentley Park and Mount Sheridan, south of Cairns.'),
+    faqNum: '04',
+    closerEyebrow: 'Edmonton &middot; travel $35',
+    closerLine: 'Book the driveway.',
+    closerBody: 'Edmonton, Bentley Park, Mount Sheridan and the estates along the highway, on the northern run out of Innisfail.',
+    body:
+      block('01', 'The top of the northern run',
+        'South of Cairns, and priced as such.',
+        `<p>Edmonton, Bentley Park and Mount Sheridan sit at the top of the northern run.
+        Travel is a flat $35 rather than the $55 that applies once you are into Cairns proper
+        and the northern beaches &mdash; a difference worth knowing before you ring a Cairns
+        operator who charges the same to cross town.</p>
+        <p>The car stays at your house. Nobody drops anything off, nobody waits in a
+        reception, and the job gets a day rather than an hour.</p>`) +
+
+      block('02', 'New estates, no shade',
+        'The newer the street, the harder it is on paint.',
+        `<p>The estates through Edmonton and Bentley Park went up fast and the trees have not
+        caught up, which means most cars here sit on an open driveway in full sun every day.
+        UV this close to the tropics is the single most underrated thing working on a car
+        finish, and it works on flat surfaces first &mdash; roof, bonnet, boot lid. Reds and
+        blacks show it earliest.</p>
+        <p>Interiors go the same way. A dashboard baked daily and left unprotected is what
+        fades, and a car doing school runs collects the rest: crumbs into seat seams,
+        sunscreen on door cards, sand from a weekend at the beach.</p>
+        <p>Protection is the cheaper half of that problem. A finish
+        <a href="/paint-correction/">corrected</a> and then
+        <a href="/ceramic-coating/">coated</a> holds up for years in this sun rather than
+        weeks.</p>`, true) +
+
+      block('03', 'What it costs in Edmonton',
+        'Twenty dollars less than the same job in Cairns.',
+        `<ul class="points">
+          <li><b>Maintenance Detail</b> &mdash; from $190.</li>
+          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
+          <li><b>Travel to the northern run</b> &mdash; $35, against $55 into Cairns.</li>
+        </ul>
+        <p class="foot-note">Prices are for a small car. Larger vehicles and neglected
+        condition are priced in the <a href="/#quote">quote tool</a> before you book, not
+        after the work starts.</p>`),
+
+    faq: [
+      { q: 'Is Edmonton charged as Cairns?',
+        a: 'No. Edmonton, Bentley Park and Mount Sheridan sit in the Babinda to Edmonton zone at $35, not the $55 Cairns zone.' },
+      { q: 'Do you come to Bentley Park and Mount Sheridan?',
+        a: 'Yes, both are on the same run and the same travel figure.' },
+      { q: 'My car lives on an open driveway. Is a coating worth it?',
+        a: 'That is the case where it earns its money fastest. An unshaded car in this sun is the one that goes flat first, and a coating is what stands between the paint and the UV.' },
+      { q: 'Can you work at my workplace?',
+        a: 'Yes, as long as the car can be parked safely for the day and there is a power point and a tap you can use.' },
+      { q: 'How long does a full detail take?',
+        a: 'Five to six hours on site. It is a day, not an appointment, which is why only one car is booked at a time.' }
+    ]
+  },
+
+  /* -------------------------------------------------------------- CARDWELL */
+  /* Cardwell is deliberately NOT in the quote tool's zone list in script.js,
+     so this page sends people to the phone rather than the calculator. If a
+     `cardwell` zone is ever added there, swap the closer back to /#quote. */
+  {
+    slug: 'cardwell',
+    crumb: 'Cardwell',
+    image: 'work-bluepanel.jpg',
+    placename: 'Cardwell, Queensland',
+    title: 'Car Detailing Cardwell | Mobile, On Request | DucoWorks',
+    ogTitle: 'Car Detailing Cardwell | DucoWorks',
+    description: 'Mobile car detailing in Cardwell, on request from Innisfail. Detailing, paint correction and ceramic coating. Travel quoted on enquiry.',
+    h1: 'Car Detailing<br>in Cardwell',
+    strap: 'South of the standard run, so Cardwell is on request. Call it in and if the job is worth the drive, the drive happens.',
+    schema: service('Mobile Car Detailing in Cardwell',
+      'Mobile car detailing, paint correction and ceramic coating in Cardwell, on request from Innisfail.'),
+    faqNum: '04',
+    closerEyebrow: 'Cardwell &middot; on request',
+    closerLine: 'Call it in.',
+    closerBody: 'Cardwell sits past the standard southern run, so the travel figure is worked out on the call rather than in the quote tool.',
+    body:
+      block('01', 'On request, not on the run',
+        'Further south than the regular loop, and priced honestly because of it.',
+        `<p>The standard southern run stops at Tully. Cardwell is past it, which is why it is
+        listed as on request rather than sitting in the quote tool with a fixed travel figure
+        beside it. Ring and ask &mdash; if the job is worth the drive, the drive happens.</p>
+        <p>In practice that usually means a bigger job than a maintenance wash, or two cars at
+        the one address on the same day. The package prices themselves do not change; the
+        travel is the only part worked out on the call.</p>`) +
+
+      block('02', 'The most exposed stretch on the coast',
+        'Open water on one side, range on the other, and salt through everything.',
+        `<p>Cardwell sits right on the channel with almost nothing between the road and the
+        water. Salt air here is relentless in a way it is not even at Mission Beach, and it
+        reaches everything parked in it &mdash; paint, chrome, badges, wheel faces and every
+        exposed fastener on the car.</p>
+        <p>Add the same tropical UV as the rest of the coast and unprotected paint has very
+        little chance. The cars that hold up here are the ones with something on top of the
+        clear coat rather than nothing.</p>
+        <p>That is what <a href="/ceramic-coating/">a ceramic coating</a> is for, and why
+        <a href="/paint-correction/">correction</a> comes first &mdash; a coating locks in
+        whatever is underneath it.</p>`, true) +
+
+      block('03', 'What it costs at Cardwell',
+        'Same package prices, travel on enquiry.',
+        `<ul class="points">
+          <li><b>Maintenance Detail</b> &mdash; from $190.</li>
+          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290, carried out at the Innisfail workshop.</li>
+          <li><b>Travel to Cardwell</b> &mdash; quoted on the call, not in the tool.</li>
+        </ul>
+        <p class="foot-note">Run your car through the <a href="/#quote">quote tool</a> for the
+        package figure, then <a href="tel:+61401881802">call</a> and the travel gets added to
+        it. No callback, no sales pitch.</p>`),
+
+    faq: [
+      { q: 'Do you actually come to Cardwell?',
+        a: 'On request. It is past the standard southern run, so it is a phone call rather than a booking straight off the quote tool.' },
+      { q: 'What does travel to Cardwell cost?',
+        a: 'It is worked out on the call. The package price is the same as anywhere else on the coast, and travel is the only variable.' },
+      { q: 'Is it worth it for one car?',
+        a: 'Sometimes, and sometimes not. A full detail or a coating job usually is. It is a straight answer on the phone either way rather than a maybe.' },
+      { q: 'Can two cars be done at the same address?',
+        a: 'That is the arrangement that makes the drive work best, and it is worth saying so when you call.' },
+      { q: 'Where does ceramic coating get done?',
+        a: 'At the DucoWorks workshop, 61 Ryan Street, Innisfail. Coating is the one service that is not mobile, because it needs a controlled, dust-free space to cure properly.' }
+    ]
+  }
   ];
 };

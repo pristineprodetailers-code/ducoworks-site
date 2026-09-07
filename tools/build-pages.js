@@ -155,8 +155,13 @@ function foot(p) {
       <div>
         <h4>Areas</h4>
         <p><a href="/cairns/">Cairns</a></p>
+        <p><a href="/edmonton/">Edmonton</a></p>
+        <p><a href="/gordonvale/">Gordonvale</a></p>
+        <p><a href="/babinda/">Babinda</a></p>
         <p><a href="/innisfail/">Innisfail</a></p>
-        <p><a href="/tully/">Tully &amp; Mission Beach</a></p>
+        <p><a href="/mission-beach/">Mission Beach</a></p>
+        <p><a href="/tully/">Tully</a></p>
+        <p><a href="/cardwell/">Cardwell</a></p>
       </div>
       <div>
         <h4>Contact</h4>
@@ -227,7 +232,7 @@ const service = (name, desc) => ({
   serviceType: name,
   description: desc,
   provider: { '@id': SITE + '/#business' },
-  areaServed: ['Cairns', 'Gordonvale', 'Babinda', 'Innisfail', 'Mission Beach', 'Tully']
+  areaServed: ['Cairns', 'Edmonton', 'Gordonvale', 'Babinda', 'Innisfail', 'Mission Beach', 'Tully', 'Cardwell']
     .map(function (c) { return { '@type': 'City', name: c }; }),
   availableChannel: {
     '@type': 'ServiceChannel',
