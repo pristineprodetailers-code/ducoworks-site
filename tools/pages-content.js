@@ -32,7 +32,7 @@ module.exports = function (h) {
     ogTitle: 'What Car Detailing Actually Costs — Cairns to Tully',
     description: 'What car detailing costs across Cairns, Innisfail and Tully. Real prices from $190, what changes them, and why most detailers will not tell you a figure.',
     h1: 'What car detailing<br>actually costs',
-    strap: 'Around here a maintenance detail starts at $190, a full detail at $385, and paint correction with a ceramic coating at $1,290. Here is what moves those numbers.',
+    strap: 'Around here a maintenance detail starts at $190, a full detail at $435, and paint correction with a ceramic coating at $1,290. Here is what moves those numbers.',
     schema: service('Car Detailing Pricing',
       'Published pricing for mobile car detailing, paint correction and ceramic coating across Cairns, Innisfail and Tully.'),
     faqNum: '05',
@@ -44,7 +44,7 @@ module.exports = function (h) {
         'Three levels of work. These are the starting prices, for a small car.',
         `<ul class="points">
           <li><b>Maintenance Detail &mdash; from $190.</b> A car that is already looked after and needs to stay that way. Two to three hours.</li>
-          <li><b>Full Detail &mdash; from $385.</b> The reset, for a car that has not been touched properly in a year or more. Five to six hours.</li>
+          <li><b>Full Detail &mdash; from $435.</b> The reset, for a car that has not been touched properly in a year or more. Five to six hours.</li>
           <li><b>Correction &amp; Ceramic &mdash; from $1,290.</b> Swirls machined out, then coated so the finish holds for five years. One to two days at the Innisfail workshop.</li>
         </ul>
         <p>Those are real prices, not a range designed to get you on the phone. You can
@@ -53,10 +53,10 @@ module.exports = function (h) {
       block('02', 'What changes the price',
         'Four things, and only four.',
         `<ul class="points">
-          <li><b>The size of the car.</b> A hatch is not a seven-seater. Small, medium and large &mdash; a Full Detail runs $385, $460 or $540.</li>
+          <li><b>The size of the car.</b> A hatch is not a seven-seater. Small, medium and large &mdash; a Full Detail runs $435, $485 or $535.</li>
           <li><b>Its condition.</b> A well-kept car is the base price. Average adds 10%, neglected adds 25%. Hours are hours.</li>
           <li><b>Where you are.</b> Innisfail and within 25km is free. Silkwood to Tully $25, Babinda to Edmonton $35, Cairns and the northern beaches $55. Correction and coating are done at the workshop, so travel does not apply.</li>
-          <li><b>Anything extra.</b> Pet hair $55, engine bay $55, seat and carpet extraction $165. Glass or wheel coating $180 each, alongside a correction.</li>
+          <li><b>Anything extra.</b> Pet hair $100, engine bay $100, seat and carpet extraction $200. Glass or wheel coating $180 each, alongside a correction.</li>
         </ul>`, true) +
 
       block('03', 'Why nobody will tell you a price',
@@ -82,7 +82,7 @@ module.exports = function (h) {
 
     faq: [
       { q: 'How much does a full car detail cost in Cairns?',
-        a: 'A Full Detail starts at $385 for a small car, $460 for a medium and $540 for a large. Travel to Cairns and the northern beaches is $55 on top. If the car is in average or neglected condition, 10% or 25% is added, because the work takes longer.' },
+        a: 'A Full Detail starts at $435 for a small car, $485 for a medium and $535 for a large. Travel to Cairns and the northern beaches is $55 on top. If the car is in average or neglected condition, 10% or 25% is added, because the work takes longer.' },
       { q: 'Why do car detailing prices vary so much?',
         a: 'Four things: the size of the car, its condition, how far it has to be travelled to, and any extras such as pet hair or seat extraction. Beyond that, most of the variation between detailers is how much work is actually being done — a two-hour wash and a six-hour detail are both called detailing.' },
       { q: 'How much is a ceramic coating?',
@@ -306,13 +306,13 @@ module.exports = function (h) {
     image: 'work-wheel.jpg',
     title: 'Car Detailing Cairns, Innisfail & Tully | DucoWorks',
     ogTitle: 'Full Detail — Mobile Car Detailing, Cairns to Tully',
-    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Tar removal, three-month protection and an interior deep clean, at your place. From $385.',
+    description: 'Full mobile car detailing across Cairns, Innisfail and Tully. Tar removal, three-month protection and an interior deep clean, at your place. From $435.',
     h1: 'Full Detail',
     strap: 'The reset. For a car that has not been touched properly in a year or more — inside and out, in one day.',
     schema: service('Car Detailing',
       'Full interior and exterior car detailing including tar removal, three-month exterior protection, interior deep clean and interior protectant, performed at the customer\'s home.'),
     faqNum: '04',
-    closerEyebrow: 'From $385',
+    closerEyebrow: 'From $435',
     closerLine: 'Get it back.',
     closerBody: 'Most cars are two or three years past their last proper detail. The difference after one is the reason people book the next one.',
     body:
@@ -347,7 +347,7 @@ module.exports = function (h) {
         standard power point and a tap. The van does not carry water, so a tap is a
         requirement rather than a convenience. Undercover space helps in the wet season, but
         otherwise the job happens in your driveway while you get on with your day.</p>
-        <p>Pricing starts at $385 for a small car and is confirmed on inspection.
+        <p>Pricing starts at $435 for a small car and is confirmed on inspection.
         <a href="/#quote">Four questions gives you the figure</a> for your exact vehicle and
         suburb, including travel.</p>`),
 
@@ -408,7 +408,7 @@ module.exports = function (h) {
         'Published, not quoted on the phone.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> — from $190. For a car that is already looked after and needs to stay that way.</li>
-          <li><b>Full Detail</b> — from $385. The reset, inside and out.</li>
+          <li><b>Full Detail</b> — from $435. The reset, inside and out.</li>
           <li><b>Correction &amp; Ceramic</b> — from $1,290. Corrected, then coated for years.</li>
           <li><b>Travel to Cairns</b> — $55, included in the figure the quote tool gives you.</li>
         </ul>
@@ -469,7 +469,7 @@ module.exports = function (h) {
         'No travel charge. The price you see is the price.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> — from $190, two to three hours.</li>
-          <li><b>Full Detail</b> — from $385, most of a day.</li>
+          <li><b>Full Detail</b> — from $435, most of a day.</li>
           <li><b>Correction &amp; Ceramic</b> — from $1,290, one to two days.</li>
           <li><b>Travel within 25 km of Innisfail</b> — nothing.</li>
         </ul>
@@ -531,7 +531,7 @@ module.exports = function (h) {
         'Same work, same standard, $25 of highway.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> — from $190.</li>
-          <li><b>Full Detail</b> — from $385.</li>
+          <li><b>Full Detail</b> — from $435.</li>
           <li><b>Correction &amp; Ceramic</b> — from $1,290.</li>
           <li><b>Travel to the southern run</b> — $25.</li>
         </ul>
@@ -600,7 +600,7 @@ module.exports = function (h) {
         'Published, not quoted on the phone.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> &mdash; from $190. For a car that is already looked after and needs to stay that way.</li>
-          <li><b>Full Detail</b> &mdash; from $385. The reset, inside and out.</li>
+          <li><b>Full Detail</b> &mdash; from $435. The reset, inside and out.</li>
           <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290. Corrected, then coated for years.</li>
           <li><b>Travel to the southern run</b> &mdash; $25, included in the figure the quote tool gives you.</li>
         </ul>
@@ -667,7 +667,7 @@ module.exports = function (h) {
         'Same work, same standard, $35 of highway.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> &mdash; from $190.</li>
-          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Full Detail</b> &mdash; from $435.</li>
           <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
           <li><b>Travel to the northern run</b> &mdash; $35.</li>
         </ul>
@@ -733,7 +733,7 @@ module.exports = function (h) {
         'Published, not quoted on the phone.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> &mdash; from $190.</li>
-          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Full Detail</b> &mdash; from $435.</li>
           <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
           <li><b>Travel to the northern run</b> &mdash; $35.</li>
         </ul>
@@ -800,7 +800,7 @@ module.exports = function (h) {
         'Twenty dollars less than the same job in Cairns.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> &mdash; from $190.</li>
-          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Full Detail</b> &mdash; from $435.</li>
           <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290.</li>
           <li><b>Travel to the northern run</b> &mdash; $35, against $55 into Cairns.</li>
         </ul>
@@ -869,7 +869,7 @@ module.exports = function (h) {
         'Same package prices, travel on enquiry.',
         `<ul class="points">
           <li><b>Maintenance Detail</b> &mdash; from $190.</li>
-          <li><b>Full Detail</b> &mdash; from $385.</li>
+          <li><b>Full Detail</b> &mdash; from $435.</li>
           <li><b>Correction &amp; Ceramic</b> &mdash; from $1,290, carried out at the Innisfail workshop.</li>
           <li><b>Travel to Cardwell</b> &mdash; quoted on the call, not in the tool.</li>
         </ul>

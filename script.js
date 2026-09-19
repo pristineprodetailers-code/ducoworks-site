@@ -33,7 +33,7 @@ var PRICING = {
     full: {
       label: 'Full Detail',
       duration: '5–6 hours on site',
-      base: { small: 385, medium: 460, large: 540 }
+      base: { small: 435, medium: 485, large: 535 }
     },
     correction: {
       label: 'Correction & Ceramic',
@@ -70,9 +70,9 @@ var PRICING = {
   // car is already corrected and masked in the workshop, so the extra work is
   // small against the extra money.
   addons: {
-    pethair:    { label: 'Pet hair removal',         price: 55 },
-    engine:     { label: 'Engine bay detail',        price: 55 },
-    seats:      { label: 'Seat & carpet extraction', price: 165 },
+    pethair:    { label: 'Pet hair removal',         price: 100 },
+    engine:     { label: 'Engine bay detail',        price: 100 },
+    seats:      { label: 'Seat & carpet extraction', price: 200 },
     // Only sold alongside the Correction & Ceramic package.
     glass:      { label: 'Glass coating', price: 180, requires: 'correction' },
     wheels:     { label: 'Wheel coating', price: 180, requires: 'correction' }
